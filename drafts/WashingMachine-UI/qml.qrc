@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>icons/icon-play.png</file>
+    </qresource>
+</RCC>
