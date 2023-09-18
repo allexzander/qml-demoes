@@ -1,0 +1,23 @@
+{
+	"BUILD_DIR" : "D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/WashingMachine-UI_autogen",
+	"CMAKE_BINARY_DIR" : "D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/work/qml-demos/drafts/WashingMachine-UI",
+	"CMAKE_SOURCE_DIR" : "D:/work/qml-demos/drafts/WashingMachine-UI",
+	"INCLUDE_DIR" : "D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/WashingMachine-UI_autogen/include",
+	"INPUTS" : 
+	[
+		"D:/work/qml-demos/drafts/WashingMachine-UI/main.qml",
+		"D:/work/qml-demos/drafts/WashingMachine-UI/icons/icon-play.png"
+	],
+	"LOCK_FILE" : "D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/WashingMachine-UI_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "qml" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_qml.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt/5.15.2/msvc2019_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/WashingMachine-UI_autogen.dir/AutoRcc_qml_EWIEGA46WW_Used.txt",
+	"SOURCE" : "D:/work/qml-demos/drafts/WashingMachine-UI/qml.qrc",
+	"VERBOSITY" : 0
+}

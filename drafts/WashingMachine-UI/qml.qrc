@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>icons/icon-play.png</file>
+        <file>icons/icon-gear.png</file>
+        <file>WasherUiButtonLink.qml</file>
+        <file>WasherUiCycleToggle.qml</file>
+        <file>WasherUiCycleCustomizationItem.qml</file>
     </qresource>
 </RCC>

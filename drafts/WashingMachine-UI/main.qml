@@ -10,6 +10,14 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
+    property int mainControlPanelWidth: 500
+    property int mainControlPanelHeight: 290
+
+    property int customizeWashControlPanelHorizontalOverflow: 60
+    property int customizeWashControlPanelWidth: mainControlPanelWidth + customizeWashControlPanelHorizontalOverflow
+    property int customizeWashControlPanelHeight: 80
+    property int customizeWashControlPanelButtonWidth: 150
+
     Rectangle {
         id: mainContainer
         anchors.fill: parent
@@ -24,9 +32,9 @@ Window {
         }
 
         Rectangle {
-            id: controlPanel
-            width: 450
-            height: 250
+            id: controlPanelShadow
+            width: mainControlPanelWidth
+            height: mainControlPanelHeight
             color: "#3a414e"
             anchors.centerIn: parent
 
@@ -36,11 +44,21 @@ Window {
                 horizontalOffset: 8
                 verticalOffset: 8
             }
+        }
+
+        Rectangle {
+            id: controlPanel
+            width: mainControlPanelWidth
+            height: mainControlPanelHeight
+            color: "#3a414e"
+            anchors.centerIn: parent
+
 
             Text {
                 id: title
                 text: "New wash"
                 font.pixelSize: 24
+                font.bold: true
                 color: "#ffffff"
                 anchors.left: parent.left
                 anchors.top: parent.top
@@ -58,136 +76,6 @@ Window {
                 anchors.topMargin: 50
             }
 
-            Flickable {
-                id: listContainer
-                anchors.topMargin: 20
-                anchors.top: subtitle.top
-                anchors.left: subtitle.left
-                anchors.right: parent.right
-                height: 40
-                contentWidth: washTypes.contentWidth
-                contentHeight: washTypes.contentHeight
-
-                clip: true
-                interactive: true
-                flickableDirection: Flickable.HorizontalFlick
-
-                ListView {
-                    id: washTypes
-                    anchors.fill: parent
-                    spacing: 10
-                    orientation: ListView.Horizontal
-                    focus: true
-
-                    model: [
-                        "TOWELS",
-                        "JEANS",
-                        "SHIRTS",
-                        "BEDLINEN",
-                        "BOOTS",
-                        "WHITE",
-                        "COLORED",
-                        "MIXED"
-                    ]
-                    delegate: Item {
-                        implicitWidth: label.implicitWidth
-                        implicitHeight: label.implicitHeight
-                        Text {
-                            id: label
-                            text: modelData
-                            color: washTypes.currentIndex === index ? "#ffffff" : "#222222"
-                            font.bold: true
-                            font.pixelSize: 30
-                        }
-                        MouseArea {
-                            id: delegateMouseArea
-                            anchors.fill: parent
-                            onClicked: {
-                                var mouseX = mouse.x
-                                var mouseY = mouse.y
-                                var delegateRightX = parent.x + parent.width
-                                var delegateLeftX = parent.x
-                                var containerWidth = controlPanel.width
-                                var containerX = controlPanel.x
-                                if (delegateRightX > containerWidth) {
-                                    listContainer.flick(-700, 0)
-                                } else if (delegateLeftX < containerX) {
-                                    listContainer.flick(700, 0)
-                                }
-
-                                washTypes.currentIndex = index;
-                            }
-                        }
-                    }
-                }
-            }
-
-            Rectangle {
-                id: washCustomizationControlPanel
-                width: 450
-                height: 50
-                color: "#3a414e"
-                anchors.top: listContainer.bottom
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.topMargin: 20
-                layer.enabled: true
-                layer.effect: DropShadow {
-                    transparentBorder: true
-                    horizontalOffset: 8
-                }
-
-                RowLayout {
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.top: parent.top
-
-
-                    Item {
-                        implicitWidth: 150
-                        implicitHeight: 50
-                        Text {
-                            id: modeName
-                            anchors.top: parent.top
-                            anchors.left: parent.left
-                            text: "Rinsing"
-                        }
-
-                        Item {
-                            id: modes
-                            anchors.left: modeName.left
-                            anchors.right: parent.right
-                            anchors.top: modeName.top
-                            Button {
-                                id: firstMode
-                                anchors.left: parent.left
-                                text: "ON"
-                                width: 20
-                                height: 20
-                            }
-                            Button {
-                                id: secondMode
-                                anchors.left: firstMode.right
-                                anchors.leftMargin: 20
-                                text: "OFF"
-                                width: 20
-                                height: 20
-                            }
-                        }
-
-                        ButtonGroup {
-                            buttons: modes.children
-                            onClicked: console.log("clicked:", button.text)
-                        }
-
-                        Layout.alignment: Qt.AlignVCenter
-
-                    }
-                }
-
-            }
-
-
-
             Item {
                 id: buttonStartWash
 
@@ -202,7 +90,8 @@ Window {
                 Text {
                     id: buttonLabel
                     text: "Start wash"
-                    font.pixelSize: 12
+                    font.pixelSize: 14
+                    font.bold: true
                     color: "#ffffff"
 
                     anchors.right: button.left
@@ -239,6 +128,213 @@ Window {
                 }
             }
 
+            Flickable {
+                id: listContainer
+                anchors.topMargin: 20
+                anchors.top: subtitle.top
+                anchors.left: subtitle.left
+                anchors.right: parent.right
+                height: 40
+                contentWidth: washTypes.contentWidth
+                contentHeight: washTypes.contentHeight
+
+                clip: true
+                interactive: true
+                flickableDirection: Flickable.HorizontalFlick
+
+                ListView {
+                    id: washTypes
+                    anchors.fill: parent
+                    spacing: 10
+                    orientation: ListView.Horizontal
+                    focus: true
+
+                    model: [
+                        "TOWELS",
+                        "JEANS",
+                        "SHIRTS",
+                        "BEDLINEN",
+                        "BOOTS",
+                        "WHITE",
+                        "COLORED",
+                        "MIXED"
+                    ]
+                    delegate: Item {
+                        id: washTypeDelegate
+                        implicitWidth: label.implicitWidth
+                        implicitHeight: label.implicitHeight
+                        Text {
+                            id: label
+                            text: modelData
+                            color: "#ffffff"
+                            opacity: washTypes.currentIndex === model.index ? 1.0 : 0.5
+                            font.bold: true
+                            font.pixelSize: 30
+                        }
+                        MouseArea {
+                            id: delegateMouseArea
+                            anchors.fill: parent
+                            onClicked: {
+                                var mouseX = mouse.x
+                                var mouseY = mouse.y
+                                var delegateRightX = parent.x + parent.width
+                                var delegateLeftX = parent.x
+                                var containerWidth = controlPanel.width
+                                var containerX = controlPanel.x
+                                if (delegateRightX > containerWidth) {
+                                    listContainer.flick(-700, 0)
+                                } else if (delegateLeftX < containerX) {
+                                    listContainer.flick(700, 0)
+                                }
+
+                                washTypes.currentIndex = index;
+                            }
+                        }
+                    }
+                }
+            }
+
+            Rectangle {
+                id: washCustomizationControlPanel
+                width: customizeWashControlPanelButtonWidth * 4
+                height: customizeWashControlPanelHeight
+                color: "#3a414e"
+                anchors.top: listContainer.bottom
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.topMargin: 10
+                layer.enabled: true
+                layer.effect: DropShadow {
+                    transparentBorder: true
+                    horizontalOffset: 8
+                    verticalOffset: 8
+                }
+
+
+                RowLayout {
+                    anchors.fill: parent
+
+                    WasherUiCycleCustomizationItem {
+                        id: rinsingMode
+                        modeName: "Rinsing"
+                        modeNameFont.pixelSize: 10
+                        modeNameFont.bold: true
+                        modeNameColor: "#cdff72"
+
+                        bgGradientColorStart: "#414856"
+                        bgGradientColorStop: "#444c5b"
+
+                        textFirstState: "ON"
+                        textSecondState: "OFF"
+                        toggleFont.pixelSize: 16
+                        toggleFont.bold: true
+                        toggleTextColor: "#ffffff"
+                        Layout.alignment: Qt.AlignLeft
+                        Layout.fillWidth: true
+                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
+                    }
+
+                    WasherUiCycleCustomizationItem {
+                        modeName: "Drying"
+                        modeNameFont.pixelSize: 10
+                        modeNameFont.bold: true
+                        modeNameColor: "#cdff72"
+
+                        bgGradientColorStart: "#414856"
+                        bgGradientColorStop: "#444c5b"
+
+                        textFirstState: "ON"
+                        textSecondState: "OFF"
+                        toggleFont.pixelSize: 16
+                        toggleFont.bold: true
+                        toggleTextColor: "#ffffff"
+                        Layout.alignment: Qt.AlignLeft
+                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
+                        Layout.fillWidth: true
+                    }
+
+                    WasherUiCycleCustomizationItem {
+                        modeName: "Load"
+                        modeNameFont.pixelSize: 10
+                        modeNameFont.bold: true
+                        modeNameColor: "#cdff72"
+
+                        bgGradientColorStart: "#414856"
+                        bgGradientColorStop: "#444c5b"
+
+                        textFirstState: "FULL"
+                        textSecondState: "1/2"
+                        toggleFont.pixelSize: 16
+                        toggleFont.bold: true
+                        toggleTextColor: "#ffffff"
+                        Layout.alignment: Qt.AlignLeft
+                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
+                        Layout.fillWidth: true
+                    }
+
+                    WasherUiCycleCustomizationItem {
+                        modeName: "Power saving"
+                        modeNameFont.pixelSize: 10
+                        modeNameFont.bold: true
+                        modeNameColor: "#cdff72"
+
+                        bgGradientColorStart: "#414856"
+                        bgGradientColorStop: "#444c5b"
+
+                        textFirstState: "ON"
+                        textSecondState: "OFF"
+                        toggleFont.pixelSize: 16
+                        toggleFont.bold: true
+                        toggleTextColor: "#ffffff"
+                        Layout.alignment: Qt.AlignLeft
+                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
+                        Layout.fillWidth: true
+                    }
+                }
+            }
+
+            Text {
+                id: remainingTimeLable
+                text: "Washing time: 1:20"
+                font.pixelSize: 14
+                color: "#ffffff"
+                anchors.left: parent.left
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
+                anchors.leftMargin: 20
+            }
+
+            Text {
+                id: advancedSettings
+                text: "Advanced settings"
+                font.pixelSize: 14
+                opacity: 0.5
+                anchors.right: buttonAdvancedSettings.left
+                anchors.verticalCenter: buttonAdvancedSettings.verticalCenter
+            }
+
+            Item {
+                id: buttonAdvancedSettings
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
+                anchors.rightMargin: 20
+                width: 32
+                height: 32
+
+                opacity: 0.4
+
+                Image {
+                    source: "qrc:/icons/icon-gear.png"
+                    sourceSize.width: 32
+                    sourceSize.height: 32
+                    anchors.fill: parent
+                    anchors.margins: 8
+                }
+                MouseArea {
+                    id: mouseAreaButtonAdvancedSettings
+                    anchors.fill: parent
+                }
+            }
         }
     }
 }

@@ -1,0 +1,11 @@
+# ninja log v5
+2	34	0	CMakeFiles/WashingMachine-UI_autogen	12983e742e141b7e
+2	34	0	D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_5_12_11_MSVC2015_64bit-Debug/WashingMachine-UI_autogen/mocs_compilation.cpp	12983e742e141b7e
+74	258	7167587270234614	CMakeFiles/WashingMachine-UI.dir/WashingMachine-UI_autogen/EWIEGA46WW/qrc_qml.cpp.obj	d8f520fd27406054
+2	34	0	WashingMachine-UI_autogen/mocs_compilation.cpp	12983e742e141b7e
+33	74	7167587268387138	D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_5_12_11_MSVC2015_64bit-Debug/WashingMachine-UI_autogen/EWIEGA46WW/qrc_qml.cpp	8bec2fd68c83a96c
+113	179	7167586693831726	CMakeFiles/WashingMachine-UI.dir/WashingMachine-UI_autogen/mocs_compilation.cpp.obj	2a947c69680edcd6
+2	34	0	D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_5_12_11_MSVC2015_64bit-Debug/CMakeFiles/WashingMachine-UI_autogen	12983e742e141b7e
+33	74	7167587268387138	WashingMachine-UI_autogen/EWIEGA46WW/qrc_qml.cpp	8bec2fd68c83a96c
+116	1105	7167586703083239	CMakeFiles/WashingMachine-UI.dir/main.cpp.obj	d068543f9d71d927
+258	504	7167587272134954	WashingMachine-UI.exe	4e43b543a1bb34db
