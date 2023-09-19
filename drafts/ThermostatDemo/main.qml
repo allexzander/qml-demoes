@@ -68,16 +68,17 @@ Window {
                         ctx.arc(centerX, centerY, radius, angleStart, angleStop, false);
                         ctx.stroke();
 
-                    }
-                    Component.onCompleted: {
-                        handle.lastAngle = angleStart/4;
-                        handle.x = arcCanvas.centerX - arcCanvas.radius * Math.cos(angleStart/4);
-                        handle.y = arcCanvas.centerY - arcCanvas.radius * Math.sin(angleStart/4);
-                    }
-                }
+                        var cosAngle = Math.cos(handle.lastAngle);
+                        var sinAngle = Math.sin(handle.lastAngle);
 
-                Rectangle {
-                    id: handle
+                        var handleX = centerX + arcCanvas.radius * cosAngle;
+                        var handleY = centerY + arcCanvas.radius * sinAngle;
+
+                        console.log("handle.lastAngle: " + handle.lastAngle);
+                    }
+
+                    Rectangle {
+                        id: handle
                         width: 20
                         height: 20
                         radius: width / 2
@@ -88,9 +89,17 @@ Window {
                             GradientStop { position: 0.0; color: "lightblue" }
                             GradientStop { position: 1.0; color: "lightgreen" }
                         }
+                    }
+
+
+                    Component.onCompleted: {
+                        var capLeftAngleOriginal = arcCanvas.angleStart + 0.5
+                        var capLeftAngleTranslated = capLeftAngleOriginal < 0 ? capLeftAngleOriginal + 2*Math.PI : capLeftAngleOriginal - 2*Math.PI
+                        handle.lastAngle = capLeftAngleTranslated;
+                        handle.x = arcCanvas.centerX + arcCanvas.radius * Math.cos(handle.lastAngle) - handle.width / 2;
+                        handle.y = arcCanvas.centerY + arcCanvas.radius * Math.sin(handle.lastAngle) - handle.height / 2;
+                    }
                 }
-
-
                 MouseArea {
                     id: handleMouseArea
                     anchors.fill: parent
@@ -132,31 +141,39 @@ Window {
                         var stopAngle = arcCanvas.angleStop
                         var startAngle = arcCanvas.angleStart
 
-                        var cosAngle = Math.cos(angle);
-                        var sinAngle = Math.sin(angle);
 
 
-                        var handleX = arcCanvas.centerX + arcCanvas.radius * cosAngle;
-                        var handleY = arcCanvas.centerY + arcCanvas.radius * sinAngle;
 
+                        var angleMinus2Pi = angle < 0 ? (angle + 2*Math.PI) : (angle - 2*Math.PI);
 
-                                            if (cosAngle - arcCanvas.capOffset < 0 && sinAngle + arcCanvas.capOffset > 0) {
-                                                console.log("Left bound exceeded: " + Math.atan(angle));
-                                                handleX = arcCanvas.centerX + arcCanvas.radius * -1 + arcCanvas.capOffset;
-                                                handleY = arcCanvas.centerY + arcCanvas.radius * (0 + arcCanvas);
+                        var capLeftAngleOriginal = startAngle + 0.5
+                        var capRightAngleOriginal = stopAngle - 0.5
+
+                        var capLeftAngleTranslated = capLeftAngleOriginal < 0 ? capLeftAngleOriginal + 2*Math.PI : capLeftAngleOriginal - 2*Math.PI
+                        var capRightAngleTranslated = capRightAngleOriginal > 0 ? capRightAngleOriginal - 2*Math.PI : capRightAngleOriginal + 2*Math.PI
+
+                                            if (angleMinus2Pi - 0.5 <=  startAngle) {
+                                                console.log("Left bound exceeded angle: " + angle + "capLeftAngleTranslated: " + capLeftAngleTranslated);
+                                                angle = capLeftAngleTranslated
                                             }
-                                            if (sinAngle + arcCanvas.capOffset > 0 && cosAngle + arcCanvas.capOffset > 0) {
-                                                handleX = arcCanvas.centerX + arcCanvas.radius * (1 - arcCanvas.capOffset);
-                                                handleY = arcCanvas.centerY + arcCanvas.radius * (0 - arcCanvas.capOffset);
+                                            if (angleMinus2Pi + 0.5 >= stopAngle) {
+                                                 console.log("Right bound exceeded angle: " + angle + "c capRightAngleTranslated: " + capRightAngleTranslated);
+                                                angle = capRightAngleTranslated
                                             }
+
+                                            var cosAngle = Math.cos(angle);
+                                            var sinAngle = Math.sin(angle);
+                                            var handleX = arcCanvas.centerX + arcCanvas.radius * cosAngle;
+                                            var handleY = arcCanvas.centerY + arcCanvas.radius * sinAngle;
+
 
                                             console.log("Position change cos: " + cosAngle + " sin: " + sinAngle);
 console.log("Position change startAngle: " + startAngle + " stopAngle: " + stopAngle);
-                        console.log("Position change angle is: " + angle + " handleX: " + handleX + " handleY: " + handleY)
+                        console.log("Position change angle is: " + angle + " angleMinus2Pi is: " + angleMinus2Pi + " handleX: " + handleX + " handleY: " + handleY)
 
                                             handle.lastAngle = angle
-                                            handle.x = handleX
-                                            handle.y = handleY
+                                            handle.x = handleX - handle.width / 2
+                                            handle.y = handleY - handle.width / 2
                     }
                 }
             }

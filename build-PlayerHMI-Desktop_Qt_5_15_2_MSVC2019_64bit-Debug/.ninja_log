@@ -1,0 +1,11 @@
+# ninja log v5
+2	96	7167591693702120	PlayerHMI_autogen/timestamp	6a7f8f6439c6488b
+2	96	7167591693702120	PlayerHMI_autogen/mocs_compilation.cpp	6a7f8f6439c6488b
+2	96	7167591693702120	D:/work/qml-demos/build-PlayerHMI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/PlayerHMI_autogen/timestamp	6a7f8f6439c6488b
+2	96	7167591693702120	D:/work/qml-demos/build-PlayerHMI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/PlayerHMI_autogen/mocs_compilation.cpp	6a7f8f6439c6488b
+96	202	7167591695163144	PlayerHMI_autogen/EWIEGA46WW/qrc_qml.cpp	3fbbec7c7a15bac0
+96	202	7167591695163144	D:/work/qml-demos/build-PlayerHMI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/PlayerHMI_autogen/EWIEGA46WW/qrc_qml.cpp	3fbbec7c7a15bac0
+202	257	7167591695738430	CMakeFiles/PlayerHMI.dir/PlayerHMI_autogen/mocs_compilation.cpp.obj	805313897dfc9576
+210	334	7167591696508434	CMakeFiles/PlayerHMI.dir/PlayerHMI_autogen/EWIEGA46WW/qrc_qml.cpp.obj	de0dd353d25295ac
+206	1095	7167591704108591	CMakeFiles/PlayerHMI.dir/main.cpp.obj	882153e311f4d69b
+1096	1531	7167591708038355	PlayerHMI.exe	917da4de4b333704

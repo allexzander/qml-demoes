@@ -1,0 +1,23 @@
+{
+	"BUILD_DIR" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen",
+	"CMAKE_BINARY_DIR" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/work/qml-demos/drafts/ThermostatDemo",
+	"CMAKE_SOURCE_DIR" : "D:/work/qml-demos/drafts/ThermostatDemo",
+	"INCLUDE_DIR" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen/include",
+	"INPUTS" : 
+	[
+		"D:/work/qml-demos/drafts/ThermostatDemo/CircularSlider.qml",
+		"D:/work/qml-demos/drafts/ThermostatDemo/main.qml"
+	],
+	"LOCK_FILE" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/ThermostatDemo_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "qml" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_qml.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt/5.15.2/msvc2019_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/ThermostatDemo_autogen.dir/AutoRcc_qml_EWIEGA46WW_Used.txt",
+	"SOURCE" : "D:/work/qml-demos/drafts/ThermostatDemo/qml.qrc",
+	"VERBOSITY" : 0
+}
