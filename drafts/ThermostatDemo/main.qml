@@ -93,7 +93,7 @@ Window {
 
 
                     Component.onCompleted: {
-                        var capLeftAngleOriginal = arcCanvas.angleStart + 0.5
+                        var capLeftAngleOriginal = arcCanvas.angleStart + arcCanvas.capOffset
                         var capLeftAngleTranslated = capLeftAngleOriginal < 0 ? capLeftAngleOriginal + 2*Math.PI : capLeftAngleOriginal - 2*Math.PI
                         handle.lastAngle = capLeftAngleTranslated;
                         handle.x = arcCanvas.centerX + arcCanvas.radius * Math.cos(handle.lastAngle) - handle.width / 2;
@@ -146,19 +146,26 @@ Window {
 
                         var angleMinus2Pi = angle < 0 ? (angle + 2*Math.PI) : (angle - 2*Math.PI);
 
-                        var capLeftAngleOriginal = startAngle + 0.5
-                        var capRightAngleOriginal = stopAngle - 0.5
+                        var capLeftAngleOriginal = startAngle + arcCanvas.capOffset
+                        var capRightAngleOriginal = stopAngle - arcCanvas.capOffset
 
                         var capLeftAngleTranslated = capLeftAngleOriginal < 0 ? capLeftAngleOriginal + 2*Math.PI : capLeftAngleOriginal - 2*Math.PI
                         var capRightAngleTranslated = capRightAngleOriginal > 0 ? capRightAngleOriginal - 2*Math.PI : capRightAngleOriginal + 2*Math.PI
 
-                                            if (angleMinus2Pi - 0.5 <=  startAngle) {
+                                            if (angleMinus2Pi - arcCanvas.capOffset <=  startAngle) {
                                                 console.log("Left bound exceeded angle: " + angle + "capLeftAngleTranslated: " + capLeftAngleTranslated);
                                                 angle = capLeftAngleTranslated
                                             }
-                                            if (angleMinus2Pi + 0.5 >= stopAngle) {
+                                            if (angleMinus2Pi + arcCanvas.capOffset >= stopAngle) {
                                                  console.log("Right bound exceeded angle: " + angle + "c capRightAngleTranslated: " + capRightAngleTranslated);
                                                 angle = capRightAngleTranslated
+                                            }
+
+                                            if (Math.abs(angle) - Math.abs(handle.lastAngle) >= 1.0) {
+                                                console.log("Too much angle change!!!!")
+                                                return
+                                            } else {
+                                                console.log("NOT too much angle change!!!! angle: " + angle + " handle.lastAngle: " + handle.lastAngle)
                                             }
 
                                             var cosAngle = Math.cos(angle);
@@ -167,9 +174,9 @@ Window {
                                             var handleY = arcCanvas.centerY + arcCanvas.radius * sinAngle;
 
 
-                                            console.log("Position change cos: " + cosAngle + " sin: " + sinAngle);
-console.log("Position change startAngle: " + startAngle + " stopAngle: " + stopAngle);
-                        console.log("Position change angle is: " + angle + " angleMinus2Pi is: " + angleMinus2Pi + " handleX: " + handleX + " handleY: " + handleY)
+                                           //console.log("Position change cos: " + cosAngle + " sin: " + sinAngle);
+//console.log("Position change startAngle: " + startAngle + " stopAngle: " + stopAngle);
+                       // console.log("Position change angle is: " + angle + " angleMinus2Pi is: " + angleMinus2Pi + " handleX: " + handleX + " handleY: " + handleY)
 
                                             handle.lastAngle = angle
                                             handle.x = handleX - handle.width / 2
