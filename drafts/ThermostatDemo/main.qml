@@ -34,6 +34,7 @@ Window {
         }
 
         CircularSlider {
+            id: circularSlider
             trackGradientColorStart: "red"
             trackGradientColorStop: "blue"
 
@@ -43,6 +44,16 @@ Window {
             anchors.centerIn: parent
             width: 200
             height: 200
+        }
+        Text {
+            anchors.top: circularSlider.bottom
+            anchors.horizontalCenter: circularSlider.horizontalCenter
+            anchors.topMargin: 20
+            font.bold: true
+            font.pixelSize: 14
+            color: "#ffffff"
+            id: valueDisplay
+            text: circularSlider.value
         }
     }
 }
