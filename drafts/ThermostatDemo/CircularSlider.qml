@@ -9,11 +9,7 @@ Item {
 
     /* clockwise degrees count */
     property int startAngleDegrees: 180
-    /* 0..100*/
-    property int endAnglePercent: 100
-
-    property int startAngleLimitPercent: 0
-    property int endAngleLimitPercent: 100
+    property int endAngleDegrees: 20
 
     property real value: 40
 
@@ -34,13 +30,36 @@ Item {
         function toRadians(angle) {
             return angle * (Math.PI/180)
         }
+        function toDegrees(radians) {
+            return radians * (180 / Math.PI);
+        }
+        function convertToAtan2Range(angle) {
+            if (angle >= 0 && angle < Math.PI) {
+                return angle;
+            } else {
+                return angle - 2 * Math.PI;
+            }
+        }
+        function isWithinRange(degree_value, start_degrees, end_degrees) {
+            if (start_degrees <= end_degrees) {
+                // Standard range where start_degrees <= end_degrees
+                return degree_value >= start_degrees && degree_value <= end_degrees;
+            } else {
+                // Range that wraps around the unit circle
+                return degree_value >= start_degrees || degree_value <= end_degrees;
+            }
+        }
+        function absoluteRadiansBetweenClockwise(startAngleRadians, endAngleRadians) {
+            let clockwiseRadians = endAngleRadians - startAngleRadians;
+            if (clockwiseRadians < 0) {
+                clockwiseRadians += 2 * Math.PI;
+            }
+            return clockwiseRadians;
+        }
         property real startAngle: toRadians(root.startAngleDegrees)
-        property real endAngle: root.endAnglePercent/100 * (2*Math.PI)
+        property real endAngle: toRadians(root.endAngleDegrees)
 
-        property real startAngleLimit: startAngle + (root.startAngleLimitPercent/100 * startAngle)
-        property real endAngleLimit: root.endAngleLimitPercent/100 * endAngle
-
-        property real valueFactor: 100 / (endAngle - startAngle)
+        property real valueFactor: 100 / absoluteRadiansBetweenClockwise(startAngle, endAngle)
     }
 
     // Add a Canvas for drawing the arc
@@ -95,8 +114,8 @@ Item {
         }
 
         Component.onCompleted: {
-            let initialAngle = internal.startAngleLimit + (Math.abs(internal.endAngleLimit - internal.startAngleLimit) / 100 * value)
-
+            let angleAbsolute = internal.startAngle + (root.value / internal.valueFactor)
+            let initialAngle = internal.convertToAtan2Range(angleAbsolute)
             let initialAngleTransformed = initialAngle
             handle.lastAngle = initialAngleTransformed;
             console.log("initialAngleTransformed is: " + initialAngleTransformed)
@@ -138,15 +157,45 @@ Item {
 
             var angleAbsolute = angle < 0 ? (angle + 2*Math.PI) : angle;
 
+
             var capLeftAngleOriginal = internal.startAngle + track.capOffset
             var capRightAngleOriginal = internal.endAngle - track.capOffset
 
             var capLeftAngleTranslated = capLeftAngleOriginal < 0 ? capLeftAngleOriginal + 2*Math.PI : capLeftAngleOriginal - 2*Math.PI
             var capRightAngleTranslated = capRightAngleOriginal > 0 ? capRightAngleOriginal - 2*Math.PI : capRightAngleOriginal + 2*Math.PI
 
-            let lastAngleMinus2Pi = handle.lastAngle < 0 ? (handle.lastAngle + 2*Math.PI) : (handle.lastAngle - 2*Math.PI);
+            var angleMinus2Pi = angle < 0 ? (angle + 2*Math.PI) : (angle - 2*Math.PI);
 
+            let clockwiseAngle = Math.PI - angle
 
+            var clockwiseAngleAbsolute = clockwiseAngle < 0 ? (clockwiseAngle + 2*Math.PI) : clockwiseAngle;
+
+            var angleAbsoluteDeg = internal.toDegrees(angleAbsolute)
+            var angleStartDeg = internal.toDegrees(startAngle)
+            var angleEndDeg = internal.toDegrees(endAngle)
+
+            console.log("angleAbsoluteDeg is: " + angleAbsoluteDeg + " angleStartDeg: " + angleStartDeg + " angleEndDeg: " + angleEndDeg);
+
+            let lowerBound = angleStartDeg < angleEndDeg ? angleStartDeg : angleEndDeg
+            let upperBound = angleEndDeg > angleStartDeg ? angleEndDeg : angleStartDeg
+
+            if (internal.isWithinRange(angleAbsoluteDeg, angleStartDeg, angleEndDeg)) {
+                console.log("The degrees value is within the range")
+            } else {
+                if (root.value < 50) {
+                    angleAbsolute = internal.startAngle
+                    angle = internal.convertToAtan2Range(internal.startAngle)
+                } else {
+                    angleAbsolute = internal.endAngle
+                    angle = internal.convertToAtan2Range(internal.endAngle)
+                }
+            }
+
+            let newValue = Math.abs(internal.valueFactor * (internal.absoluteRadiansBetweenClockwise(internal.startAngle, angleAbsolute)))
+
+            if (Math.abs(newValue - root.value) > 50) {
+                return
+            }
 
             var cosAngle = Math.cos(angle);
             var sinAngle = Math.sin(angle);
@@ -162,7 +211,7 @@ Item {
             handle.x = handleX - handle.width / 2
             handle.y = handleY - handle.width / 2
 
-            root.value = Math.abs(100 - internal.valueFactor * angleAbsolute)
+            root.value = newValue
 
             console.log("Value is now: " + root.value)
         }
