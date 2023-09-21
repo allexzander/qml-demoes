@@ -114,11 +114,10 @@ Window {
                         opacity: enabled && mouseArea.pressed? 0.5: 1.0
                     }
                     Image {
-                        source: "qrc:/icons/icon-play.png"
-                        sourceSize.width: 32
-                        sourceSize.height: 32
-                        anchors.fill: parent
-                        anchors.margins: 8
+                        source: "qrc:/icons/icon-play.svg"
+                        sourceSize.width: 12
+                        sourceSize.height: 12
+                        anchors.centerIn: parent
                     }
 
                     MouseArea {
@@ -324,11 +323,10 @@ Window {
                 opacity: 0.4
 
                 Image {
-                    source: "qrc:/icons/icon-gear.png"
-                    sourceSize.width: 32
-                    sourceSize.height: 32
-                    anchors.fill: parent
-                    anchors.margins: 8
+                    source: "qrc:/icons/icon-gear.svg"
+                    sourceSize.width: 18
+                    sourceSize.height: 18
+                    anchors.centerIn: parent
                 }
                 MouseArea {
                     id: mouseAreaButtonAdvancedSettings
