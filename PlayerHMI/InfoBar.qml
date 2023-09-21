@@ -12,7 +12,7 @@ Item {
     }
 
     MediaNavigationButton {
-        iconSource: "qrc:/icons/arrow-back.png"
+        iconSource: "qrc:/icons/arrow-back.svg"
         anchors.left: parent.left
         anchors.leftMargin: 10
         anchors.bottom: parent.bottom

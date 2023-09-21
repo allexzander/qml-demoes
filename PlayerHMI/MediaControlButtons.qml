@@ -9,10 +9,10 @@ RowLayout {
 
     implicitWidth: childrenRect.width
 
-    property string playButtonIcon: "qrc:/icons/player-button-play.png"
-    property string pauseButtonIcon: "qrc:/icons/player-button-pause.png"
-    property string startButtonIcon: "qrc:/icons/player-button-start.png"
-    property string endButtonIcon: "qrc:/icons/player-button-end.png"
+    property string playButtonIcon: "qrc:/icons/player-button-play.svg"
+    property string pauseButtonIcon: "qrc:/icons/player-button-pause.svg"
+    property string startButtonIcon: "qrc:/icons/player-button-start.svg"
+    property string endButtonIcon: "qrc:/icons/player-button-end.svg"
 
     MediaControlButton {
         iconSource: startButtonIcon

@@ -6,17 +6,17 @@ RowLayout {
 
     Repeater {
         model: [
-            "qrc:/icons/info-icons/info-mute.png",
-            "qrc:/icons/info-icons/info-charge.png",
-            "qrc:/icons/info-icons/info-mail.png",
-            "qrc:/icons/info-icons/info-bluetooth.png",
-            "qrc:/icons/info-icons/info-gps.png",
-            "qrc:/icons/info-icons/info-signal.png"
+            "qrc:/icons/info-icons/info-mute.svg",
+            "qrc:/icons/info-icons/info-charge.svg",
+            "qrc:/icons/info-icons/info-mail.svg",
+            "qrc:/icons/info-icons/info-bluetooth.svg",
+            "qrc:/icons/info-icons/info-gps.svg",
+            "qrc:/icons/info-icons/info-signal.svg"
         ]
         delegate: Image {
             source: model.modelData
-            sourceSize.width: 12
-            sourceSize.height: 12
+            sourceSize.width: 16
+            sourceSize.height: 16
 
             Layout.preferredWidth: sourceSize.width
             Layout.preferredHeight: sourceSize.height

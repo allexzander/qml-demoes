@@ -21,8 +21,8 @@ Item {
     Image {
         id: icon
         source: iconSource
-        sourceSize.width: root.width * 0.7
-        sourceSize.height: root.height * 0.7
+        sourceSize.width: root.width * 0.25
+        sourceSize.height: root.width * 0.25
         anchors.centerIn: parent
     }
 

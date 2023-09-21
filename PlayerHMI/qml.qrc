@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>icons/repeat-icon.png</file>
         <file>icons/mieda-bg.jpg</file>
         <file>StatusBarIcons.qml</file>
         <file>MediaInfoText.qml</file>
@@ -12,22 +11,22 @@
         <file>MediaControls.qml</file>
         <file>InfoBar.qml</file>
         <file>MainControls.qml</file>
-        <file>icons/player-button-pause.png</file>
-        <file>icons/player-button-play.png</file>
-        <file>icons/player-button-start.png</file>
-        <file>icons/player-button-end.png</file>
-        <file>icons/player-button-repeat.png</file>
-        <file>icons/player-button-shuffle.png</file>
-        <file>icons/player-button-favorites.png</file>
         <file>MediaExtraButton.qml</file>
         <file>MediaControlButton.qml</file>
         <file>MediaNavigationButton.qml</file>
-        <file>icons/arrow-back.png</file>
-        <file>icons/info-icons/info-bluetooth.png</file>
-        <file>icons/info-icons/info-charge.png</file>
-        <file>icons/info-icons/info-gps.png</file>
-        <file>icons/info-icons/info-mail.png</file>
-        <file>icons/info-icons/info-mute.png</file>
-        <file>icons/info-icons/info-signal.png</file>
+        <file>icons/info-icons/info-mute.svg</file>
+        <file>icons/info-icons/info-charge.svg</file>
+        <file>icons/info-icons/info-mail.svg</file>
+        <file>icons/info-icons/info-bluetooth.svg</file>
+        <file>icons/info-icons/info-gps.svg</file>
+        <file>icons/info-icons/info-signal.svg</file>
+        <file>icons/player-button-end.svg</file>
+        <file>icons/player-button-pause.svg</file>
+        <file>icons/player-button-play.svg</file>
+        <file>icons/player-button-start.svg</file>
+        <file>icons/player-button-favorites.svg</file>
+        <file>icons/player-button-repeat.svg</file>
+        <file>icons/player-button-shuffle.svg</file>
+        <file>icons/arrow-back.svg</file>
     </qresource>
 </RCC>

@@ -10,19 +10,19 @@ RowLayout {
 
 
     MediaExtraButton {
-        iconSource: "qrc:/icons/player-button-repeat.png"
+        iconSource: "qrc:/icons/player-button-repeat.svg"
+        Layout.preferredWidth: buttonSize * 0.8
+        Layout.preferredHeight: buttonSize * 0.8
+    }
+
+    MediaExtraButton {
+        iconSource: "qrc:/icons/player-button-shuffle.svg"
         Layout.preferredWidth: buttonSize
         Layout.preferredHeight: buttonSize
     }
 
     MediaExtraButton {
-        iconSource: "qrc:/icons/player-button-shuffle.png"
-        Layout.preferredWidth: buttonSize
-        Layout.preferredHeight: buttonSize
-    }
-
-    MediaExtraButton {
-        iconSource: "qrc:/icons/player-button-favorites.png"
+        iconSource: "qrc:/icons/player-button-favorites.svg"
         Layout.preferredWidth: buttonSize
         Layout.preferredHeight: buttonSize
     }
