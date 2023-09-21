@@ -12,8 +12,8 @@ Window {
     color: "#172168"
     Rectangle {
         id: container
-        width: 500
-        height: 300
+        width: 600
+        height: 350
         anchors.centerIn: parent
 
         LinearGradient {
@@ -44,14 +44,16 @@ Window {
             handleBorderColor: "#9628b4"
             handleBorderWidth: 2
 
-            width: 300
-            height: 300
-            anchors.centerIn: parent
+            width: 380
+            height: 180
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 50
 
             Text {
                 id: statusLabel
-                anchors.top: parent.top
-                anchors.topMargin: 120
+                anchors.bottom: temperatureDisplay.top
+                anchors.bottomMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 16
                 color: "#ffffff"
@@ -59,9 +61,22 @@ Window {
             }
 
             Text {
+                id: valueDegreeSymbol
+                anchors.bottom: temperatureDisplay.top
+                anchors.right: temperatureDisplay.right
+                anchors.rightMargin: -15
+                anchors.topMargin: -15
+                font.pixelSize: 58
+                height: 20
+                width: 20
+                color: "#ffffff"
+                text: "°"
+            }
+
+            Text {
                 id: temperatureDisplay
-                anchors.top: statusLabel.top
-                anchors.topMargin: 20
+                anchors.bottom: temperatureStatus.top
+                anchors.bottomMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 58
                 color: "#ffffff"
@@ -69,20 +84,9 @@ Window {
             }
 
             Text {
-                id: valueDegreeSymbol
-                anchors.top: temperatureDisplay.top
-                anchors.right: temperatureDisplay.right
-                anchors.rightMargin: -30
-                anchors.topMargin: -10
-                font.pixelSize: 58
-                color: "#ffffff"
-                text: "°"
-            }
-
-            Text {
                 id: temperatureStatus
-                anchors.top: temperatureDisplay.bottom
-                anchors.topMargin: 5
+                anchors.bottom: circularSlider.bottom
+                anchors.bottomMargin: circularSlider.trackBottomMargin - 15
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 18
                 color: "#ffffff"

@@ -3,10 +3,10 @@ import QtQuick 2.0
 Canvas {
     id: root
     property int trackWidth: 5
-    property real radius: height / 2 - trackWidth
+    property real radius: height - trackWidth
 
     readonly property real centerX: parent.width / 2
-    readonly property real centerY: parent.height / 2 + parent.height / 4
+    readonly property real centerY: parent.height
     property real startAngle: 0
     property real endAngle: 2 * Math.PI
     property real initialAngle: startAngle

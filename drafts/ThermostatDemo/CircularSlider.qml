@@ -32,6 +32,9 @@ Rectangle {
 
     readonly property bool displayDebugBorders: false
 
+    readonly property int trackTopMargin: controlContainer.anchors.topMargin
+    readonly property int trackBottomMargin: controlContainer.anchors.topMargin
+
     Utility {
         id: utils
     }
@@ -50,7 +53,9 @@ Rectangle {
         anchors.top: root.top
         anchors.bottom: root.bottom
         anchors.horizontalCenter: root.horizontalCenter
-        width: height
+        width: root.width
+        anchors.topMargin: handle.height / 4
+        anchors.bottomMargin: handle.height / 2
         color: "transparent"
         border.width: root.displayDebugBorders ? 1 : 0
         border.color: root.displayDebugBorders ? "green" : "transparent"
@@ -107,10 +112,12 @@ Rectangle {
         property bool isDragging: false
 
         onPressed: {
+            console.log("Pressed")
             let mousePositionInControlContainer = internal.convertMouseCoords(Qt.point(mouse.x, mouse.y))
             if (mousePositionInControlContainer.x >= handle.x && mousePositionInControlContainer.x <= handle.x + handle.width) {
                 if (mousePositionInControlContainer.y >= handle.y && mousePositionInControlContainer.y <= handle.y + handle.height) {
                     isDragging = true
+                    console.log("Start drag")
                 }
             }
         }
