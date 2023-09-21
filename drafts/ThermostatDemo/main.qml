@@ -3,6 +3,7 @@ import QtQuick.Window 2.15
 import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.12
 
 Window {
     width: 640
@@ -33,6 +34,14 @@ Window {
             }
         }
 
+        TimeAndWeather {
+            id: timeAndWeather
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.leftMargin: 20
+            anchors.topMargin: 20
+        }
+
         CircularSlider {
             id: circularSlider
             startAngleDegrees: 180
@@ -50,48 +59,51 @@ Window {
             anchors.top: parent.top
             anchors.topMargin: 50
 
-            Text {
-                id: statusLabel
+            TemperatureStatus {
+                id: temperatureStatus
+
                 anchors.bottom: temperatureDisplay.top
                 anchors.bottomMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 16
-                color: "#ffffff"
-                text: "AWAY"
             }
 
-            Text {
-                id: valueDegreeSymbol
-                anchors.bottom: temperatureDisplay.top
-                anchors.right: temperatureDisplay.right
-                anchors.rightMargin: -15
-                anchors.topMargin: -15
-                font.pixelSize: 58
-                height: 20
-                width: 20
-                color: "#ffffff"
-                text: "°"
-            }
-
-            Text {
+            TemperatureDisplay {
                 id: temperatureDisplay
-                anchors.bottom: temperatureStatus.top
+                anchors.bottom: temperatureLevelStatus.top
                 anchors.bottomMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 58
-                color: "#ffffff"
                 text: Math.floor(circularSlider.value)
             }
 
-            Text {
-                id: temperatureStatus
+            TemperatureLevelStatus {
+                id: temperatureLevelStatus
                 anchors.bottom: circularSlider.bottom
                 anchors.bottomMargin: circularSlider.trackBottomMargin - 15
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 18
-                color: "#ffffff"
-                text: "COOL 69°"
             }
+        }
+
+        RightSidebar {
+            id: rightSidebar
+            width: 70
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+        }
+
+        OnOffToggle {
+            id: onOffToggle
+            anchors.left: parent.left
+            anchors.leftMargin: 20
+            anchors.bottom: parent.bottom
+            height: 60
+        }
+
+        BottomSidebar {
+            id: bottomSidebar
+            anchors.bottom: parent.bottom
+            anchors.left: onOffToggle.right
+            anchors.right: rightSidebar.left
         }
     }
 }

@@ -5,5 +5,24 @@
         <file>Utility.qml</file>
         <file>TrackCanvas.qml</file>
         <file>CircularSliderHandle.qml</file>
+        <file>icons/right-sidebar-icon-menu.svg</file>
+        <file>SidebarButton.qml</file>
+        <file>icons/right-sidebar-icon-scenes.svg</file>
+        <file>icons/right-sidebar-icon-alerts.svg</file>
+        <file>icons/right-sidebar-icon-settings.svg</file>
+        <file>icons/temperature-icon-status.svg</file>
+        <file>icons/temperature-icon-tempstatus.svg</file>
+        <file>RightSidebar.qml</file>
+        <file>TemperatureLevelStatus.qml</file>
+        <file>TemperatureDisplay.qml</file>
+        <file>TemperatureStatus.qml</file>
+        <file>BottomSidebar.qml</file>
+        <file>BottomSidebarButton.qml</file>
+        <file>OnOffToggle.qml</file>
+        <file>TimeAndWeather.qml</file>
+        <file>icons/weather-icon.svg</file>
+        <file>icons/lightning-icon.svg</file>
+        <file>icons/fire-icon.svg</file>
+        <file>icons/propeller-icon.svg</file>
     </qresource>
 </RCC>

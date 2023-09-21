@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
 				},
 				{
 					"fragment" : "-std:c++17"
@@ -74,6 +74,10 @@
 				},
 				{
 					"backtrace" : 3,
+					"define" : "QT_NO_DEBUG"
+				},
+				{
+					"backtrace" : 3,
 					"define" : "QT_QMLMODELS_LIB"
 				},
 				{
@@ -88,14 +92,14 @@
 			"includes" : 
 			[
 				{
-					"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug"
+					"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-MinSizeRel"
 				},
 				{
 					"path" : "D:/work/qml-demos/drafts/ThermostatDemo"
 				},
 				{
 					"backtrace" : 0,
-					"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen/include"
+					"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-MinSizeRel/ThermostatDemo_autogen/include"
 				},
 				{
 					"backtrace" : 3,
@@ -190,41 +194,41 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:windows",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:windows",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Quickd.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Quick.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5QmlModelsd.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5QmlModels.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Qmld.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Qml.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Networkd.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Network.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Guid.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Gui.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Cored.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Core.lib",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\qtmaind.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\qtmain.lib",
 				"role" : "libraries"
 			},
 			{
@@ -275,7 +279,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen/mocs_compilation.cpp",
+			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-MinSizeRel/ThermostatDemo_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -292,26 +296,26 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen/timestamp",
+			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-MinSizeRel/ThermostatDemo_autogen/timestamp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen/EWIEGA46WW/qrc_qml.cpp",
+			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-MinSizeRel/ThermostatDemo_autogen/EWIEGA46WW/qrc_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen/timestamp.rule",
+			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-MinSizeRel/ThermostatDemo_autogen/timestamp.rule",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ThermostatDemo_autogen/EWIEGA46WW/qrc_qml.cpp.rule",
+			"path" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-MinSizeRel/ThermostatDemo_autogen/EWIEGA46WW/qrc_qml.cpp.rule",
 			"sourceGroupIndex" : 2
 		}
 	],
