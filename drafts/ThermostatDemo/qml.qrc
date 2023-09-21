@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>CircularSlider.qml</file>
+        <file>Utility.qml</file>
+        <file>TrackCanvas.qml</file>
+        <file>CircularSliderHandle.qml</file>
     </qresource>
 </RCC>

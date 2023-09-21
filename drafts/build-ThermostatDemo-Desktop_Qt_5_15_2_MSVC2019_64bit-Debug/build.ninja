@@ -176,7 +176,7 @@ build ThermostatDemo_autogen\timestamp ThermostatDemo_autogen\mocs_compilation.c
 #############################################
 # Custom command for ThermostatDemo_autogen\EWIEGA46WW\qrc_qml.cpp
 
-build ThermostatDemo_autogen\EWIEGA46WW\qrc_qml.cpp | ${cmake_ninja_workdir}ThermostatDemo_autogen\EWIEGA46WW\qrc_qml.cpp: CUSTOM_COMMAND D$:\work\qml-demos\drafts\ThermostatDemo\qml.qrc CMakeFiles\ThermostatDemo_autogen.dir\AutoRcc_qml_EWIEGA46WW_Info.json D$:\work\qml-demos\drafts\ThermostatDemo\CircularSlider.qml D$:\work\qml-demos\drafts\ThermostatDemo\main.qml D$:\Qt\5.15.2\msvc2019_64\bin\rcc.exe || ThermostatDemo_autogen ThermostatDemo_autogen_timestamp_deps
+build ThermostatDemo_autogen\EWIEGA46WW\qrc_qml.cpp | ${cmake_ninja_workdir}ThermostatDemo_autogen\EWIEGA46WW\qrc_qml.cpp: CUSTOM_COMMAND D$:\work\qml-demos\drafts\ThermostatDemo\qml.qrc CMakeFiles\ThermostatDemo_autogen.dir\AutoRcc_qml_EWIEGA46WW_Info.json D$:\work\qml-demos\drafts\ThermostatDemo\CircularSlider.qml D$:\work\qml-demos\drafts\ThermostatDemo\CircularSliderHandle.qml D$:\work\qml-demos\drafts\ThermostatDemo\Utility.qml D$:\work\qml-demos\drafts\ThermostatDemo\TrackCanvas.qml D$:\work\qml-demos\drafts\ThermostatDemo\main.qml D$:\Qt\5.15.2\msvc2019_64\bin\rcc.exe || ThermostatDemo_autogen ThermostatDemo_autogen_timestamp_deps
   COMMAND = cmd.exe /C "cd /D D:\work\qml-demos\drafts\build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug && D:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/ThermostatDemo_autogen.dir/AutoRcc_qml_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for qml.qrc
   restat = 1

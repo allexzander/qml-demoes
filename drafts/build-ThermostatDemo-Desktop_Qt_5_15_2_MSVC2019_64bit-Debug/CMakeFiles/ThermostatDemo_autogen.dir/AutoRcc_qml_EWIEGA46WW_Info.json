@@ -8,6 +8,9 @@
 	"INPUTS" : 
 	[
 		"D:/work/qml-demos/drafts/ThermostatDemo/CircularSlider.qml",
+		"D:/work/qml-demos/drafts/ThermostatDemo/CircularSliderHandle.qml",
+		"D:/work/qml-demos/drafts/ThermostatDemo/Utility.qml",
+		"D:/work/qml-demos/drafts/ThermostatDemo/TrackCanvas.qml",
 		"D:/work/qml-demos/drafts/ThermostatDemo/main.qml"
 	],
 	"LOCK_FILE" : "D:/work/qml-demos/drafts/build-ThermostatDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/ThermostatDemo_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
