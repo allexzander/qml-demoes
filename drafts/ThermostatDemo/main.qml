@@ -12,13 +12,10 @@ Window {
     color: "#172168"
     Rectangle {
         id: container
-        anchors {
-            fill: parent
-            leftMargin: 40
-            rightMargin: 40
-            topMargin: 80
-            bottomMargin: 80
-        }
+        width: 500
+        height: 300
+        anchors.centerIn: parent
+
         LinearGradient {
             id: gradientBackground
             source: container
@@ -40,24 +37,57 @@ Window {
             id: circularSlider
             startAngleDegrees: 180
             endAngleDegrees: 360
-            trackGradientColorStart: "red"
-            trackGradientColorStop: "blue"
+            trackGradientColorStart: "#9f28be"
+            trackGradientColorStop: "#6b91fb"
 
-            handleGradientColorStart: "lightgreen"
-            handleGradientColorStop: "lightblue"
+            handleColor: "#ffffff"
+            handleBorderColor: "#9628b4"
+            handleBorderWidth: 2
 
-            anchors.margins: 80
-            anchors.fill: parent
-        }
-        Text {
-            anchors.top: circularSlider.bottom
-            anchors.horizontalCenter: circularSlider.horizontalCenter
-            anchors.topMargin: 20
-            font.bold: true
-            font.pixelSize: 14
-            color: "#ffffff"
-            id: valueDisplay
-            text: circularSlider.value
+            width: 300
+            height: 300
+            anchors.centerIn: parent
+
+            Text {
+                id: statusLabel
+                anchors.top: parent.top
+                anchors.topMargin: 120
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: 16
+                color: "#ffffff"
+                text: "AWAY"
+            }
+
+            Text {
+                id: temperatureDisplay
+                anchors.top: statusLabel.top
+                anchors.topMargin: 20
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: 58
+                color: "#ffffff"
+                text: Math.floor(circularSlider.value)
+            }
+
+            Text {
+                id: valueDegreeSymbol
+                anchors.top: temperatureDisplay.top
+                anchors.right: temperatureDisplay.right
+                anchors.rightMargin: -30
+                anchors.topMargin: -10
+                font.pixelSize: 58
+                color: "#ffffff"
+                text: "°"
+            }
+
+            Text {
+                id: temperatureStatus
+                anchors.top: temperatureDisplay.bottom
+                anchors.topMargin: 5
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: 18
+                color: "#ffffff"
+                text: "COOL 69°"
+            }
         }
     }
 }

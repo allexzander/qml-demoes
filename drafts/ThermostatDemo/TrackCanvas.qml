@@ -16,6 +16,8 @@ Canvas {
     property string trackGradientColorStop
     property string trackColor: "#000000"
 
+    signal paintFinished
+
     onPaint: {
         let ctx = getContext("2d");
 
@@ -34,16 +36,7 @@ Canvas {
         ctx.arc(root.centerX, track.centerY, root.radius, root.startAngle, root.endAngle, false);
         ctx.stroke();
         console.log("Drawing arc from root.startAngle: " + root.startAngle + " to root.endAngle: " + root.endAngle);
-    }
-
-    Component.onCompleted: {
-        let initialAngle = utils.convertToAtan2Range(root.initialAngle)
-        let initialAngleTransformed = initialAngle
-        handle.lastAngle = initialAngleTransformed;
-        console.log("initialAngleTransformed is: " + initialAngleTransformed)
-        let newPosition = utils.calculateItemPositionFromAngle(handle.lastAngle, track.centerX, track.centerY, track.radius, handle.width, handle.height)
-        handle.x = newPosition.x;
-        handle.y = newPosition.y;
+        root.paintFinished()
     }
 
     QtObject {

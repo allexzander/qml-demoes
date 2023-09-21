@@ -19,7 +19,7 @@ Rectangle {
     border.width: root.borderWidth
     border.color: root.borderColor
 
-    color: !!gradient ? "" : root.color
+    color: root.color
 
-    gradient: !!root.gradientColorStart && !!root.gradientColorStop ? bgGradient : null
+    //gradient: !!root.gradientColorStart && !!root.gradientColorStop ? bgGradient : null
 }

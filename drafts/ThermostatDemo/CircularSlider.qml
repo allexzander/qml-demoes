@@ -30,7 +30,7 @@ Rectangle {
     property string trackGradientColorStart
     property string trackGradientColorStop
 
-    readonly property bool displayDebugBorders: true
+    readonly property bool displayDebugBorders: false
 
     Utility {
         id: utils
@@ -77,23 +77,27 @@ Rectangle {
                 property real lastAngle: 0.0
                 width: 20
                 height: 20
+                color: root.handleColor
                 gradientColorStart: root.handleGradientColorStart
                 gradientColorStop: root.handleGradientColorStop
                 border.width: root.handleBorderWidth
                 border.color: root.handleBorderColor
-            }
 
-            Component.onCompleted: {
-                let angleAbsolute = track.startAngle + (root.value / track.valueFactor)
-                let initialAngle = utils.convertToAtan2Range(angleAbsolute)
-                let initialAngleTransformed = initialAngle
-                handle.lastAngle = initialAngleTransformed;
-                console.log("initialAngleTransformed is: " + initialAngleTransformed)
-                let newPosition = utils.calculateItemPositionFromAngle(handle.lastAngle, track.centerX, track.centerY, track.radius, handle.width, handle.height)
-                handle.x = newPosition.x;
-                handle.y = newPosition.y;
+                Connections {
+                    target: track
+                    onPaintFinished: {
+                        console.log("Canvas paint finished!!!!!!!!")
+                        let angleAbsolute = track.startAngle + (root.value / track.valueFactor)
+                        let initialAngle = utils.convertToAtan2Range(angleAbsolute)
+                        let initialAngleTransformed = initialAngle
+                        handle.lastAngle = initialAngleTransformed;
+                        console.log("initialAngleTransformed is: " + initialAngleTransformed)
+                        let newPosition = utils.calculateItemPositionFromAngle(handle.lastAngle, track.centerX, track.centerY, track.radius, handle.width, handle.height)
+                        handle.x = newPosition.x;
+                        handle.y = newPosition.y;
+                    }
+                }
             }
-
         }
     }
 
@@ -116,7 +120,7 @@ Rectangle {
         }
 
         onPositionChanged: {
-            if (!isDragging || !handleMouseArea.containsMouse) {
+            if (!isDragging/* || !handleMouseArea.containsMouse*/) {
                 return;
             }
 
