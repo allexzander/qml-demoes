@@ -3,8 +3,6 @@ import QtQuick 2.0
 Flickable {
     id: root
     implicitHeight: 40
-    contentWidth: washTypes.contentWidth
-    contentHeight: washTypes.contentHeight
 
     flickableDirection: Flickable.HorizontalFlick
 
@@ -25,6 +23,7 @@ Flickable {
             "COLORED",
             "MIXED"
         ]
+
         delegate: Item {
             id: washTypeDelegate
             implicitWidth: label.implicitWidth
@@ -41,18 +40,6 @@ Flickable {
                 id: delegateMouseArea
                 anchors.fill: parent
                 onClicked: {
-                    var mouseX = mouse.x
-                    var mouseY = mouse.y
-                    var delegateRightX = parent.x + parent.width
-                    var delegateLeftX = parent.x
-                    var containerWidth = controlPanel.width
-                    var containerX = controlPanel.x
-                    if (delegateRightX > containerWidth) {
-                        root.flick(-700, 0)
-                    } else if (delegateLeftX < containerX) {
-                        root.flick(700, 0)
-                    }
-
                     washTypes.currentIndex = index;
                 }
             }

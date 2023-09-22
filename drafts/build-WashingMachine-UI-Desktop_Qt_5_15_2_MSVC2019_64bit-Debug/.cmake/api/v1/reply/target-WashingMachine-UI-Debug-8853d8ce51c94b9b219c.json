@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc -DQT_QML_DEBUG /MDd /Zi /Ob0 /Od /RTC1 -DQT_QML_DEBUG"
 				},
 				{
 					"fragment" : "-std:c++17"
@@ -163,11 +163,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "WashingMachine-UI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "WashingMachine-UI_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "WashingMachine-UI_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "WashingMachine-UI::@6890427a1f51a3e7e1df",
@@ -190,7 +190,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc -DQT_QML_DEBUG /MDd /Zi /Ob0 /Od /RTC1 -DQT_QML_DEBUG",
 				"role" : "flags"
 			},
 			{

@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_WashingMachine-UI: phony || WashingMachi
 
 build CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen\mocs_compilation.cpp.obj: CXX_COMPILER__WashingMachine-UI_Debug D$:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\WashingMachine-UI_autogen\mocs_compilation.cpp || cmake_object_order_depends_target_WashingMachine-UI
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DQT_QML_DEBUG /MDd /Zi /Ob0 /Od /RTC1 -DQT_QML_DEBUG -std:c++17
   INCLUDES = -ID:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug -ID:\work\qml-demos\drafts\WashingMachine-UI -ID:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\WashingMachine-UI_autogen\include -ID:\Qt\5.15.2\msvc2019_64\include -ID:\Qt\5.15.2\msvc2019_64\include\QtCore -ID:\Qt\5.15.2\msvc2019_64\.\mkspecs\win32-msvc -ID:\Qt\5.15.2\msvc2019_64\include\QtQuick -ID:\Qt\5.15.2\msvc2019_64\include\QtQmlModels -ID:\Qt\5.15.2\msvc2019_64\include\QtQml -ID:\Qt\5.15.2\msvc2019_64\include\QtNetwork -ID:\Qt\5.15.2\msvc2019_64\include\QtGui -ID:\Qt\5.15.2\msvc2019_64\include\QtANGLE
   OBJECT_DIR = CMakeFiles\WashingMachine-UI.dir
   OBJECT_FILE_DIR = CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen
@@ -60,7 +60,7 @@ build CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen\mocs_compilatio
 
 build CMakeFiles\WashingMachine-UI.dir\main.cpp.obj: CXX_COMPILER__WashingMachine-UI_Debug D$:\work\qml-demos\drafts\WashingMachine-UI\main.cpp || cmake_object_order_depends_target_WashingMachine-UI
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DQT_QML_DEBUG /MDd /Zi /Ob0 /Od /RTC1 -DQT_QML_DEBUG -std:c++17
   INCLUDES = -ID:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug -ID:\work\qml-demos\drafts\WashingMachine-UI -ID:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\WashingMachine-UI_autogen\include -ID:\Qt\5.15.2\msvc2019_64\include -ID:\Qt\5.15.2\msvc2019_64\include\QtCore -ID:\Qt\5.15.2\msvc2019_64\.\mkspecs\win32-msvc -ID:\Qt\5.15.2\msvc2019_64\include\QtQuick -ID:\Qt\5.15.2\msvc2019_64\include\QtQmlModels -ID:\Qt\5.15.2\msvc2019_64\include\QtQml -ID:\Qt\5.15.2\msvc2019_64\include\QtNetwork -ID:\Qt\5.15.2\msvc2019_64\include\QtGui -ID:\Qt\5.15.2\msvc2019_64\include\QtANGLE
   OBJECT_DIR = CMakeFiles\WashingMachine-UI.dir
   OBJECT_FILE_DIR = CMakeFiles\WashingMachine-UI.dir
@@ -69,7 +69,7 @@ build CMakeFiles\WashingMachine-UI.dir\main.cpp.obj: CXX_COMPILER__WashingMachin
 
 build CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen\EWIEGA46WW\qrc_qml.cpp.obj: CXX_COMPILER__WashingMachine-UI_Debug D$:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\WashingMachine-UI_autogen\EWIEGA46WW\qrc_qml.cpp || cmake_object_order_depends_target_WashingMachine-UI
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DQT_QML_DEBUG /MDd /Zi /Ob0 /Od /RTC1 -DQT_QML_DEBUG -std:c++17
   INCLUDES = -ID:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug -ID:\work\qml-demos\drafts\WashingMachine-UI -ID:\work\qml-demos\drafts\build-WashingMachine-UI-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug\WashingMachine-UI_autogen\include -ID:\Qt\5.15.2\msvc2019_64\include -ID:\Qt\5.15.2\msvc2019_64\include\QtCore -ID:\Qt\5.15.2\msvc2019_64\.\mkspecs\win32-msvc -ID:\Qt\5.15.2\msvc2019_64\include\QtQuick -ID:\Qt\5.15.2\msvc2019_64\include\QtQmlModels -ID:\Qt\5.15.2\msvc2019_64\include\QtQml -ID:\Qt\5.15.2\msvc2019_64\include\QtNetwork -ID:\Qt\5.15.2\msvc2019_64\include\QtGui -ID:\Qt\5.15.2\msvc2019_64\include\QtANGLE
   OBJECT_DIR = CMakeFiles\WashingMachine-UI.dir
   OBJECT_FILE_DIR = CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen\EWIEGA46WW
@@ -85,7 +85,7 @@ build CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen\EWIEGA46WW\qrc_
 # Link the executable WashingMachine-UI.exe
 
 build WashingMachine-UI.exe: CXX_EXECUTABLE_LINKER__WashingMachine-UI_Debug CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen\mocs_compilation.cpp.obj CMakeFiles\WashingMachine-UI.dir\main.cpp.obj CMakeFiles\WashingMachine-UI.dir\WashingMachine-UI_autogen\EWIEGA46WW\qrc_qml.cpp.obj | D$:\Qt\5.15.2\msvc2019_64\lib\Qt5Quickd.lib D$:\Qt\5.15.2\msvc2019_64\lib\Qt5QmlModelsd.lib D$:\Qt\5.15.2\msvc2019_64\lib\Qt5Qmld.lib D$:\Qt\5.15.2\msvc2019_64\lib\Qt5Networkd.lib D$:\Qt\5.15.2\msvc2019_64\lib\Qt5Guid.lib D$:\Qt\5.15.2\msvc2019_64\lib\Qt5Cored.lib D$:\Qt\5.15.2\msvc2019_64\lib\qtmaind.lib || WashingMachine-UI_autogen WashingMachine-UI_autogen_timestamp_deps
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DQT_QML_DEBUG /MDd /Zi /Ob0 /Od /RTC1 -DQT_QML_DEBUG
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:windows
   LINK_LIBRARIES = D:\Qt\5.15.2\msvc2019_64\lib\Qt5Quickd.lib  D:\Qt\5.15.2\msvc2019_64\lib\Qt5QmlModelsd.lib  D:\Qt\5.15.2\msvc2019_64\lib\Qt5Qmld.lib  D:\Qt\5.15.2\msvc2019_64\lib\Qt5Networkd.lib  D:\Qt\5.15.2\msvc2019_64\lib\Qt5Guid.lib  D:\Qt\5.15.2\msvc2019_64\lib\Qt5Cored.lib  D:\Qt\5.15.2\msvc2019_64\lib\qtmaind.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\WashingMachine-UI.dir
@@ -185,7 +185,7 @@ build WashingMachine-UI_autogen\EWIEGA46WW\qrc_qml.cpp | ${cmake_ninja_workdir}W
 #############################################
 # Phony custom command for CMakeFiles\WashingMachine-UI_autogen_timestamp_deps
 
-build CMakeFiles\WashingMachine-UI_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles\WashingMachine-UI_autogen_timestamp_deps: phony D$:\Qt\5.15.2\msvc2019_64\bin\Qt5Cored.dll D$:\Qt\5.15.2\msvc2019_64\bin\moc.exe D$:\Qt\5.15.2\msvc2019_64\bin\Qt5Quickd.dll
+build CMakeFiles\WashingMachine-UI_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles\WashingMachine-UI_autogen_timestamp_deps: phony D$:\Qt\5.15.2\msvc2019_64\bin\moc.exe D$:\Qt\5.15.2\msvc2019_64\bin\Qt5Cored.dll D$:\Qt\5.15.2\msvc2019_64\bin\Qt5Quickd.dll
 
 
 #############################################

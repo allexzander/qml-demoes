@@ -139,11 +139,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Flags used by the CXX compiler during all build types."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
-			"value" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+			"value" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc -DQT_QML_DEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_DEBUG",
@@ -155,11 +155,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Flags used by the CXX compiler during DEBUG builds."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MDd /Zi /Ob0 /Od /RTC1"
+			"value" : "/MDd /Zi /Ob0 /Od /RTC1 -DQT_QML_DEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_MINSIZEREL",
@@ -203,11 +203,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Flags used by the CXX compiler during RELWITHDEBINFO builds."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MD /Zi /O2 /Ob1 /DNDEBUG"
+			"value" : "/MD /Zi /O2 /Ob1 /DNDEBUG -DQT_QML_DEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_STANDARD_LIBRARIES",
