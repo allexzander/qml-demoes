@@ -2,5 +2,12 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>icons/salesforce-logo.svg</file>
+        <file>TilesView.qml</file>
+        <file>MainControlsContainer.qml</file>
+        <file>FiltersControl.qml</file>
+        <file>SlideshowPageControls.qml</file>
+        <file>SlideshowContainer.qml</file>
+        <file>TopBar.qml</file>
+        <file>LeftSidebar.qml</file>
     </qresource>
 </RCC>
