@@ -4,7 +4,7 @@ Item {
     id: root
     readonly property int margin: 10
     implicitWidth: temperatureStatusIcon.implicitWidth + temperatureStatus.implicitWidth + margin
-    implicitHeight: temperatureStatusIcon.implicitHeight + temperatureStatus.implicitHeight
+    implicitHeight: Math.max(temperatureStatusIcon.implicitHeight, temperatureStatus.implicitHeight)
     Image {
         id: temperatureStatusIcon
         source: "qrc:/icons/temperature-icon-tempstatus.svg"
@@ -22,7 +22,5 @@ Item {
         text: "COOL 69°"
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
-        lineHeightMode: Text.FixedHeight
-        verticalAlignment: Text.AlignVCenter
     }
 }

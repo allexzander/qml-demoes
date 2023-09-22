@@ -4,7 +4,7 @@ Item {
     id: root
     readonly property int margin: 10
     implicitWidth: statusIcon.implicitWidth + statusLabel.implicitWidth + margin
-    implicitHeight: statusIcon.implicitHeight + statusLabel.implicitHeight
+    implicitHeight: Math.max(statusIcon.implicitHeight, statusLabel.implicitHeight)
     Image {
         id: statusIcon
         source: "qrc:/icons/temperature-icon-status.svg"

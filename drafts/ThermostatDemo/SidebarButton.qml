@@ -3,11 +3,18 @@ import QtQuick.Controls 2.15
 
 AbstractButton {
     id: root
-    implicitWidth: 50
-    implicitHeight: 50
+    implicitWidth: 60
+    implicitHeight: icon.implicitHeight + label.implicitHeight + labelTopMargin + padding
+
+    readonly property int labelTopMargin: 5
+
+    scale: hovered ? 1.25 : 1.0
+    opacity: hovered ? 1.0 : 0.5
+    padding: 5
 
     contentItem: Item {
         anchors.fill: parent
+        anchors.margins: root.padding
         Image {
             id: icon
             source: root.icon.source
@@ -24,7 +31,6 @@ AbstractButton {
             color: "#ffffff"
             text: root.text
             anchors.top: icon.bottom
-            anchors.topMargin: 5
             anchors.horizontalCenter: parent.horizontalCenter
         }
     }

@@ -10,7 +10,7 @@ Item {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.leftMargin: 25
+        anchors.leftMargin: 15
         anchors.rightMargin: 25
         spacing: 0
         BottomSidebarButton {

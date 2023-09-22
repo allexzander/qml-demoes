@@ -4,16 +4,15 @@ Item {
     id: root
     readonly property int margin: 5
     implicitWidth: weatherIcon.implicitWidth + time.implicitWidth + margin
-    implicitHeight: weatherIcon.implicitHeight + time.implicitHeight
+    implicitHeight: Math.max(weatherIcon.implicitHeight, time.implicitHeight)
     Text {
         id: time
         font.pixelSize: 14
         color: "#ffffff"
-        text: "10:00 am"
+        text: "10:00 <sub>AM</sub>"
+        textFormat: Text.RichText
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
-        lineHeightMode: Text.FixedHeight
-        verticalAlignment: Text.AlignVCenter
     }
     Image {
         id: weatherIcon

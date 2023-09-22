@@ -63,22 +63,21 @@ Window {
                 id: temperatureStatus
 
                 anchors.bottom: temperatureDisplay.top
-                anchors.bottomMargin: 20
+                anchors.bottomMargin: 10
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             TemperatureDisplay {
                 id: temperatureDisplay
                 anchors.bottom: temperatureLevelStatus.top
-                anchors.bottomMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: Math.floor(circularSlider.value)
+                text: Math.floor(circularSlider.value) + "°"
             }
 
             TemperatureLevelStatus {
                 id: temperatureLevelStatus
-                anchors.bottom: circularSlider.bottom
-                anchors.bottomMargin: circularSlider.trackBottomMargin - 15
+                anchors.top: circularSlider.bottom
+                anchors.topMargin: -20
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -93,10 +92,17 @@ Window {
 
         OnOffToggle {
             id: onOffToggle
+            property bool isOn: true
+            icon.source: "qrc:/icons/propeller-icon.svg"
+            text: isOn ? "On" : "Off"
+            opacity: isOn ? 1.0 : 0.5
             anchors.left: parent.left
-            anchors.leftMargin: 20
+            anchors.leftMargin: 10
             anchors.bottom: parent.bottom
             height: 60
+            onClicked: {
+                isOn = !isOn
+            }
         }
 
         BottomSidebar {

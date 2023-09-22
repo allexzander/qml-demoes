@@ -19,7 +19,7 @@ AbstractButton {
             anchors.bottom: parent.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             implicitWidth: icon.implicitWidth + label.implicitWidth + spacing
-            implicitHeight: icon.implicitHeight + label.implicitHeight
+            implicitHeight: Math.max(icon.implicitHeight, label.implicitHeight)
             Image {
                 id: icon
                 source: root.icon.source
