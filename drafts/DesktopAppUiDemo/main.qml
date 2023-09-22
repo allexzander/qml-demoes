@@ -2,10 +2,11 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtGraphicalEffects 1.15
 import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15
 
 Window {
     width: 640
-    height: 480
+    height: 600
     visible: true
     title: qsTr("Desktop App UI Demo")
 
@@ -101,112 +102,100 @@ Window {
                 id: gridModel
                 ListElement {
                     providerName: "SalesForce"
-                    portrait: "pics/portrait.png"
+                    icon: "qrc:/icons/salesforce-logo.svg"
                 }
                 ListElement {
                     providerName: "Freshbooks"
-                    portrait: "pics/portrait.png"
+                    icon: "pics/portrait.png"
                 }
                 ListElement {
                     providerName: "Zoho"
-                    portrait: "pics/portrait.png"
+                    icon: "pics/portrait.png"
                 }
                 ListElement {
                     providerName: "Highrise"
-                    portrait: "pics/portrait.png"
+                    icon: "pics/portrait.png"
                 }
                 ListElement {
                     providerName: "RelateIQ"
-                    portrait: "pics/portrait.png"
+                    icon: "pics/portrait.png"
                 }
                 ListElement {
                     providerName: "Teamgate"
-                    portrait: "pics/portrait.png"
+                    icon: "pics/portrait.png"
                 }
                 ListElement {
                     providerName: "Invoice Sherpa"
-                    portrait: "pics/portrait.png"
+                    icon: "pics/portrait.png"
                 }
                 ListElement {
                     providerName: "Xero"
-                    portrait: "pics/portrait.png"
+                    icon: "pics/portrait.png"
                 }
             }
 
-            GridLayout {
-                id: tilesView
-                columns: 4
-
+            Flickable {
+                id: scroller
                 anchors.top: filtersControl.bottom
                 anchors.topMargin: 10
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
+                contentHeight: tilesView.height
+                contentWidth: tilesView.width
+                clip : true
+
+            GridLayout {
+                id: tilesView
+                columns: 4
+
+                columnSpacing: 15
+                rowSpacing: 15
+
+width: mainControlsContainer.width
+height: 300
 
                 Repeater {
                     model: gridModel
                     delegate: Item {
                         id: tilesDelegate
-                        width: tilesView.cellWidth - 10
-                        height: width
                         Rectangle {
-                            color: "#ffffff"
                             opacity: 0.5
                             anchors.fill: parent
 
                             border.width: 1
                             border.color: "red"
                         }
-                        Text {
-                            id: label
-                            text: providerName
+                        Layout.preferredWidth: tilesView.width / 4 - tilesView.columnSpacing
+                        Layout.preferredHeight: tilesView.width / 4 - tilesView.rowSpacing
+                        Layout.fillWidth: true
+                        ColumnLayout {
+                            anchors.fill: parent
+                            anchors.topMargin: 20
+                            anchors.bottomMargin: 20
+                            Text {
+                                id: label
+                                text: providerName
+                                color: "#ffffff"
+                                Layout.alignment: Qt.AlignHCenter
+                            }
+                            Text {
+                                id: stars
+                                text: "✩✩✩✩"
+                                color: "#ffffff"
+                                Layout.alignment: Qt.AlignHCenter
+                            }
+                            Image {
+                                id: providerIcon
+                                source: icon
+                                sourceSize.width: tilesDelegate.width * 0.3
+                                Layout.alignment: Qt.AlignHCenter
+                            }
                         }
+
                     }
                 }
             }
-
-            GridView {
-                id: tilesView
-                anchors.top: filtersControl.bottom
-                anchors.topMargin: 10
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.bottom: parent.bottom
-
-                cellWidth: tilesView.width / 4
-                cellHeight: cellWidth
-
-                snapMode: GridView.SnapOneRow
-
-                clip: true
-
-                Rectangle {
-                    color: "transparent"
-                    border.width: 1
-                    border.color: "green"
-                    anchors.fill: parent
-                }
-
-
-                model: gridModel
-
-                delegate: Item {
-                    id: tilesDelegate
-                    width: tilesView.cellWidth - 10
-                    height: width
-                    Rectangle {
-                        color: "#ffffff"
-                        opacity: 0.5
-                        anchors.fill: parent
-
-                        border.width: 1
-                        border.color: "red"
-                    }
-                    Text {
-                        id: label
-                        text: providerName
-                    }
-                }
             }
         }
     }

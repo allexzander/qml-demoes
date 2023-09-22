@@ -5,7 +5,11 @@
 	"CMAKE_CURRENT_SOURCE_DIR" : "D:/work/qml-demos/drafts/DesktopAppUiDemo",
 	"CMAKE_SOURCE_DIR" : "D:/work/qml-demos/drafts/DesktopAppUiDemo",
 	"INCLUDE_DIR" : "D:/work/qml-demos/drafts/build-DesktopAppUiDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/DesktopAppUiDemo_autogen/include",
-	"INPUTS" : [ "D:/work/qml-demos/drafts/DesktopAppUiDemo/main.qml" ],
+	"INPUTS" : 
+	[
+		"D:/work/qml-demos/drafts/DesktopAppUiDemo/main.qml",
+		"D:/work/qml-demos/drafts/DesktopAppUiDemo/icons/salesforce-logo.svg"
+	],
 	"LOCK_FILE" : "D:/work/qml-demos/drafts/build-DesktopAppUiDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/CMakeFiles/DesktopAppUiDemo_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,
 	"OPTIONS" : [ "-name", "qml" ],
