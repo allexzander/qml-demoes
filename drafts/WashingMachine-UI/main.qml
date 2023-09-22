@@ -8,15 +8,10 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Washing Machin HMI")
 
     property int mainControlPanelWidth: 500
     property int mainControlPanelHeight: 290
-
-    property int customizeWashControlPanelHorizontalOverflow: 60
-    property int customizeWashControlPanelWidth: mainControlPanelWidth + customizeWashControlPanelHorizontalOverflow
-    property int customizeWashControlPanelHeight: 80
-    property int customizeWashControlPanelButtonWidth: 150
 
     Rectangle {
         id: mainContainer
@@ -76,127 +71,27 @@ Window {
                 anchors.topMargin: 50
             }
 
-            Item {
+            WasherStartWashControl {
                 id: buttonStartWash
 
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.rightMargin: 20
                 anchors.topMargin: 30
-
-                implicitWidth: buttonLabel.width + button.width
-                implicitHeight: Math.max(buttonLabel.height, button.height)
-
-                Text {
-                    id: buttonLabel
-                    text: "Start wash"
-                    font.pixelSize: 14
-                    font.bold: true
-                    color: "#ffffff"
-
-                    anchors.right: button.left
-
-                    anchors.rightMargin: 10
-
-                }
-                Item {
-                    id: button
-                    anchors.right: parent.right
-                    anchors.verticalCenter: buttonLabel.verticalCenter
-                    width: 30
-                    height: 30
-
-
-                    Rectangle {
-                        color: "#cdff72"
-                        radius: parent.width /2
-                        anchors.fill: parent
-                        opacity: enabled && mouseArea.pressed? 0.5: 1.0
-                    }
-                    Image {
-                        source: "qrc:/icons/icon-play.svg"
-                        sourceSize.width: 12
-                        sourceSize.height: 12
-                        anchors.centerIn: parent
-                    }
-
-                    MouseArea {
-                        id: mouseArea
-                        anchors.fill: parent
-                    }
-                }
             }
 
-            Flickable {
+            WashModeSelectionList {
                 id: listContainer
                 anchors.topMargin: 20
                 anchors.top: subtitle.top
                 anchors.left: subtitle.left
                 anchors.right: parent.right
-                height: 40
-                contentWidth: washTypes.contentWidth
-                contentHeight: washTypes.contentHeight
-
                 clip: true
                 interactive: true
-                flickableDirection: Flickable.HorizontalFlick
-
-                ListView {
-                    id: washTypes
-                    anchors.fill: parent
-                    spacing: 10
-                    orientation: ListView.Horizontal
-                    focus: true
-
-                    model: [
-                        "TOWELS",
-                        "JEANS",
-                        "SHIRTS",
-                        "BEDLINEN",
-                        "BOOTS",
-                        "WHITE",
-                        "COLORED",
-                        "MIXED"
-                    ]
-                    delegate: Item {
-                        id: washTypeDelegate
-                        implicitWidth: label.implicitWidth
-                        implicitHeight: label.implicitHeight
-                        Text {
-                            id: label
-                            text: modelData
-                            color: "#ffffff"
-                            opacity: washTypes.currentIndex === model.index ? 1.0 : 0.5
-                            font.bold: true
-                            font.pixelSize: 30
-                        }
-                        MouseArea {
-                            id: delegateMouseArea
-                            anchors.fill: parent
-                            onClicked: {
-                                var mouseX = mouse.x
-                                var mouseY = mouse.y
-                                var delegateRightX = parent.x + parent.width
-                                var delegateLeftX = parent.x
-                                var containerWidth = controlPanel.width
-                                var containerX = controlPanel.x
-                                if (delegateRightX > containerWidth) {
-                                    listContainer.flick(-700, 0)
-                                } else if (delegateLeftX < containerX) {
-                                    listContainer.flick(700, 0)
-                                }
-
-                                washTypes.currentIndex = index;
-                            }
-                        }
-                    }
-                }
             }
 
-            Rectangle {
+            WashCustomizationControlPanel {
                 id: washCustomizationControlPanel
-                width: customizeWashControlPanelButtonWidth * 4
-                height: customizeWashControlPanelHeight
                 color: "#3a414e"
                 anchors.top: listContainer.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -206,88 +101,6 @@ Window {
                     transparentBorder: true
                     horizontalOffset: 8
                     verticalOffset: 8
-                }
-
-
-                RowLayout {
-                    anchors.fill: parent
-
-                    WasherUiCycleCustomizationItem {
-                        id: rinsingMode
-                        modeName: "Rinsing"
-                        modeNameFont.pixelSize: 10
-                        modeNameFont.bold: true
-                        modeNameColor: "#cdff72"
-
-                        bgGradientColorStart: "#414856"
-                        bgGradientColorStop: "#444c5b"
-
-                        textFirstState: "ON"
-                        textSecondState: "OFF"
-                        toggleFont.pixelSize: 16
-                        toggleFont.bold: true
-                        toggleTextColor: "#ffffff"
-                        Layout.alignment: Qt.AlignLeft
-                        Layout.fillWidth: true
-                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
-                    }
-
-                    WasherUiCycleCustomizationItem {
-                        modeName: "Drying"
-                        modeNameFont.pixelSize: 10
-                        modeNameFont.bold: true
-                        modeNameColor: "#cdff72"
-
-                        bgGradientColorStart: "#414856"
-                        bgGradientColorStop: "#444c5b"
-
-                        textFirstState: "ON"
-                        textSecondState: "OFF"
-                        toggleFont.pixelSize: 16
-                        toggleFont.bold: true
-                        toggleTextColor: "#ffffff"
-                        Layout.alignment: Qt.AlignLeft
-                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
-                        Layout.fillWidth: true
-                    }
-
-                    WasherUiCycleCustomizationItem {
-                        modeName: "Load"
-                        modeNameFont.pixelSize: 10
-                        modeNameFont.bold: true
-                        modeNameColor: "#cdff72"
-
-                        bgGradientColorStart: "#414856"
-                        bgGradientColorStop: "#444c5b"
-
-                        textFirstState: "FULL"
-                        textSecondState: "1/2"
-                        toggleFont.pixelSize: 16
-                        toggleFont.bold: true
-                        toggleTextColor: "#ffffff"
-                        Layout.alignment: Qt.AlignLeft
-                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
-                        Layout.fillWidth: true
-                    }
-
-                    WasherUiCycleCustomizationItem {
-                        modeName: "Power saving"
-                        modeNameFont.pixelSize: 10
-                        modeNameFont.bold: true
-                        modeNameColor: "#cdff72"
-
-                        bgGradientColorStart: "#414856"
-                        bgGradientColorStop: "#444c5b"
-
-                        textFirstState: "ON"
-                        textSecondState: "OFF"
-                        toggleFont.pixelSize: 16
-                        toggleFont.bold: true
-                        toggleTextColor: "#ffffff"
-                        Layout.alignment: Qt.AlignLeft
-                        Layout.preferredWidth: customizeWashControlPanelButtonWidth
-                        Layout.fillWidth: true
-                    }
                 }
             }
 
@@ -302,36 +115,12 @@ Window {
                 anchors.leftMargin: 20
             }
 
-            Text {
-                id: advancedSettings
-                text: "Advanced settings"
-                font.pixelSize: 14
-                opacity: 0.5
-                anchors.right: buttonAdvancedSettings.left
-                anchors.verticalCenter: buttonAdvancedSettings.verticalCenter
-            }
-
-            Item {
-                id: buttonAdvancedSettings
+            WasherAdvancedSettingsControl {
+                id: washerAdvancedSettingsControl
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 20
                 anchors.rightMargin: 20
-                width: 32
-                height: 32
-
-                opacity: 0.4
-
-                Image {
-                    source: "qrc:/icons/icon-gear.svg"
-                    sourceSize.width: 18
-                    sourceSize.height: 18
-                    anchors.centerIn: parent
-                }
-                MouseArea {
-                    id: mouseAreaButtonAdvancedSettings
-                    anchors.fill: parent
-                }
             }
         }
     }

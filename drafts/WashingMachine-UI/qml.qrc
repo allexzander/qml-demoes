@@ -6,5 +6,9 @@
         <file>WasherUiCycleCustomizationItem.qml</file>
         <file>icons/icon-play.svg</file>
         <file>icons/icon-gear.svg</file>
+        <file>WashModeSelectionList.qml</file>
+        <file>WashCustomizationControlPanel.qml</file>
+        <file>WasherAdvancedSettingsControl.qml</file>
+        <file>WasherStartWashControl.qml</file>
     </qresource>
 </RCC>
