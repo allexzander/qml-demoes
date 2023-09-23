@@ -20,31 +20,31 @@ Item {
         }
         ListElement {
             providerName: "Freshbooks"
-            icon: "pics/portrait.png"
+            icon: "qrc:/icons/salesforce-logo.svg"
         }
         ListElement {
             providerName: "Zoho"
-            icon: "pics/portrait.png"
+            icon: "qrc:/icons/salesforce-logo.svg"
         }
         ListElement {
             providerName: "Highrise"
-            icon: "pics/portrait.png"
+            icon: "qrc:/icons/salesforce-logo.svg"
         }
         ListElement {
             providerName: "RelateIQ"
-            icon: "pics/portrait.png"
+            icon: "qrc:/icons/salesforce-logo.svg"
         }
         ListElement {
             providerName: "Teamgate"
-            icon: "pics/portrait.png"
+            icon: "qrc:/icons/salesforce-logo.svg"
         }
         ListElement {
             providerName: "Invoice Sherpa"
-            icon: "pics/portrait.png"
+            icon: "qrc:/icons/salesforce-logo.svg"
         }
         ListElement {
             providerName: "Xero"
-            icon: "pics/portrait.png"
+            icon: "qrc:/icons/salesforce-logo.svg"
         }
     }
 

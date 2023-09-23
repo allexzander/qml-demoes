@@ -23,6 +23,31 @@ Window {
             }
         }
 
+        ListModel {
+            id: slideshowModel
+            ListElement {
+                header: qsTr("Wunderlist Pro")
+                subHeader: qsTr("Upgrade your Wunderlist experience and start accomplishing even more at home and in the office.")
+                buttonLabel: "Upgrade to Wunderlist Pro"
+                subtitle: "In the team? Go for Wunderlist for Business"
+                icon: "qrc:/slideshowassets/image-laptopandsmartphone.png"
+            }
+            ListElement {
+                header: qsTr("New Release")
+                subHeader: qsTr("We've jsut released a new improved version. Now, even more productivity.")
+                buttonLabel: "Check new version"
+                subtitle: "In the team? Go for Wunderlist for Business"
+                icon: "qrc:/slideshowassets/image-newrelease.svg"
+            }
+            ListElement {
+                header: qsTr("Latest News")
+                subHeader: qsTr("Significant market growth in IT is expected in the Q1 2024.")
+                buttonLabel: "Upgrade to Wunderlist Pro"
+                subtitle: "In the team? Go for Wunderlist for Business"
+                icon: "qrc:/slideshowassets/image-news.png"
+            }
+        }
+
         LeftSidebar {
             id: leftSidebar
             anchors.top: parent.top
@@ -39,16 +64,32 @@ Window {
 
         SlideshowContainer {
             id: slideshowContainer
+            model: slideshowModel
             anchors.top: topBar.bottom
             anchors.left: leftSidebar.right
             anchors.right: parent.right
+            currentIndex: 0
+            Component.onCompleted: {
+                slideshowContainer.positionViewAtBeginning()
+            }
         }
 
         SlideshowPageControls {
             id: slideshowPageControls
+            model: slideshowModel
             anchors.top: slideshowContainer.bottom
             anchors.left: leftSidebar.right
             anchors.right: parent.right
+
+            onCurrentIndexChanged: {
+                slideshowContainer.currentIndex = currentIndex
+            }
+            Connections {
+                target: slideshowContainer
+                function onCurrentIndexChanged() {
+                    slideshowPageControls.currentIndex = slideshowContainer.currentIndex
+                }
+            }
         }
 
         MainControlsContainer {

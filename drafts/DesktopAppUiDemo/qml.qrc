@@ -9,5 +9,9 @@
         <file>SlideshowContainer.qml</file>
         <file>TopBar.qml</file>
         <file>LeftSidebar.qml</file>
+        <file>slideshowassets/image-laptopandsmartphone.png</file>
+        <file>SlideshowDelegateButton.qml</file>
+        <file>slideshowassets/image-newrelease.svg</file>
+        <file>slideshowassets/image-news.png</file>
     </qresource>
 </RCC>
