@@ -13,5 +13,11 @@
         <file>SlideshowDelegateButton.qml</file>
         <file>slideshowassets/image-newrelease.svg</file>
         <file>slideshowassets/image-news.png</file>
+        <file>CategoriesComboBox.qml</file>
+        <file>icons/left-sidebar-main-icon.svg</file>
+        <file>icons/left-sidebar-list-icon-facebook.svg</file>
+        <file>icons/left-sidebar-list-icon-airbnb.svg</file>
+        <file>icons/left-sidebar-list-icon-dropbox.svg</file>
+        <file>icons/left-sidebar-list-icon-youtube.svg</file>
     </qresource>
 </RCC>
