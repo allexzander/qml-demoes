@@ -1,8 +1,0 @@
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/WashingMachine-UI.dir
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/install/local.dir
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/install.dir
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/edit_cache.dir
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/rebuild_cache.dir
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/list_install_components.dir
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/WashingMachine-UI_autogen_timestamp_deps.dir
-D:/work/qml-demos/drafts/build-WashingMachine-UI-Desktop_Qt_MSVC2019_32bit-Debug/CMakeFiles/WashingMachine-UI_autogen.dir
