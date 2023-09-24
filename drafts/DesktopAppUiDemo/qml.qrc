@@ -20,5 +20,11 @@
         <file>icons/left-sidebar-list-icon-dropbox.svg</file>
         <file>icons/left-sidebar-list-icon-youtube.svg</file>
         <file>icons/icon-search-input.svg</file>
+        <file>AccountsSelectorComboBox.qml</file>
+        <file>account-avatars/account-icon-man.svg</file>
+        <file>account-avatars/account-icon-man-1.svg</file>
+        <file>account-avatars/account-icon-woman.svg</file>
+        <file>icons/icon-bell.svg</file>
+        <file>icons/icon-envelope.svg</file>
     </qresource>
 </RCC>

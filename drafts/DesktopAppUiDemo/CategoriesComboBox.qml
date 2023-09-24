@@ -75,12 +75,11 @@ ComboBox {
         padding: 1
 
         contentItem: Column {
-
             clip: true
             Repeater {
-                        anchors.fill: controlPopup
-                        model: control.popup.visible ? control.delegateModel : null
-                    }
+                anchors.fill: parent
+                model: control.popup.visible ? control.delegateModel : null
+            }
         }
 
         background: Rectangle {
