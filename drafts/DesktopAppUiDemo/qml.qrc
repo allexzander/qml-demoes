@@ -35,5 +35,6 @@
         <file>icons/grid-icons/teamgate-logo.svg</file>
         <file>icons/grid-icons/invoicesherpa-logo.png</file>
         <file>icons/grid-icons/xero-logo.svg</file>
+        <file>FilterButtons.qml</file>
     </qresource>
 </RCC>
