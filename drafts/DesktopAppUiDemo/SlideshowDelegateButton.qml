@@ -44,11 +44,6 @@ AbstractButton {
                 anchors.verticalCenter: parent.verticalCenter
             }
         }
-        Rectangle {
-            border.color: "red"
-            border.width: 1
-            color: "transparent"
-        }
     }
     background: Rectangle {
         color: "#5ca946"

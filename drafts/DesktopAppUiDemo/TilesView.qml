@@ -5,8 +5,6 @@ GridLayout {
     id: root
     columns: 4
 
-    columnSpacing: 15
-    rowSpacing: 15
 
     property alias model: repeater.model
 
@@ -17,9 +15,6 @@ GridLayout {
             Rectangle {
                 opacity: 0.5
                 anchors.fill: parent
-
-                border.width: 1
-                border.color: "red"
             }
             Layout.preferredWidth: root.width / 4 - root.columnSpacing
             Layout.preferredHeight: root.width / 4 - root.rowSpacing
