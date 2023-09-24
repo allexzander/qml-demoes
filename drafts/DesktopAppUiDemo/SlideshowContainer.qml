@@ -95,6 +95,29 @@ Item {
                     source: model.icon
                     anchors.fill: parent
                     fillMode: Image.PreserveAspectFit
+                    SequentialAnimation on scale {
+                        id: slideAnimation
+                        PropertyAnimation {
+                            from: 1.0
+                            to: 1.1
+                            duration: 700
+                            easing.type: Easing.InCubic
+                        }
+                        PropertyAnimation {
+                            from: 1.1
+                            to: 1.0
+                            duration: 500
+                            easing.type: Easing.OutCubic
+                        }
+                        loops: 1
+                    }
+                    Timer {
+                        id: slideAnimationTimer
+                        interval: 5000
+                        running: true
+                        repeat: true
+                        onTriggered: slideAnimation.running = true
+                    }
                 }
             }
         }

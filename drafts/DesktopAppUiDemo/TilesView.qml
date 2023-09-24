@@ -13,7 +13,8 @@ GridLayout {
         delegate: Item {
             id: tilesDelegate
             Rectangle {
-                opacity: 0.5
+                opacity: mouseArea.containsMouse ? 1.0 : 0.5
+                color: "#344a81"
                 anchors.fill: parent
             }
             Layout.preferredWidth: root.width / 4 - root.columnSpacing
@@ -42,7 +43,11 @@ GridLayout {
                     Layout.alignment: Qt.AlignHCenter
                 }
             }
-
+            MouseArea {
+                id: mouseArea
+                anchors.fill: parent
+                hoverEnabled: true
+            }
         }
     }
 }

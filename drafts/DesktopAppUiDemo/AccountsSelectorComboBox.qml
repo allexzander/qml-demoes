@@ -17,7 +17,7 @@ ComboBox {
         highlighted: control.highlightedIndex === model.index
 
         background: Rectangle {
-            color: control.highlightedIndex === model.index ? "#ffffff" : "transparent" // Set the highlight color to gray
+            color: control.highlightedIndex === model.index ? "#dddddd" : "transparent" // Set the highlight color to gray
         }
     }
 
@@ -85,14 +85,14 @@ ComboBox {
 
         Connections {
             target: control
-            onCurrentIndexChanged: {
+            function onCurrentIndexChanged() {
                 control.displayText = model.get(control.currentIndex).accountName
             }
         }
 
         background: Rectangle {
             border.color: "#ffffff"
-            color: "#dddddd"
+            color: "#ffffff"
             radius: 2
         }
     }

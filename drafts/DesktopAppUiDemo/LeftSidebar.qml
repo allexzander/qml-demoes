@@ -31,37 +31,22 @@ Item {
 
         spacing: 20
 
-        Image {
-            sourceSize.width: root.layoutIconWidth
-            sourceSize.height: root.layoutIconWidth
-            source: "qrc:/icons/left-sidebar-list-icon-facebook.svg"
-            Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: root.layoutIconWidth
-            Layout.preferredHeight: root.layoutIconWidth
-        }
-        Image {
-            sourceSize.width: root.layoutIconWidth
-            sourceSize.height: root.layoutIconWidth
-            source: "qrc:/icons/left-sidebar-list-icon-airbnb.svg"
-            Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: root.layoutIconWidth
-            Layout.preferredHeight: root.layoutIconWidth
-        }
-        Image {
-            sourceSize.width: root.layoutIconWidth
-            sourceSize.height: root.layoutIconWidth
-            source: "qrc:/icons/left-sidebar-list-icon-dropbox.svg"
-            Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: root.layoutIconWidth
-            Layout.preferredHeight: root.layoutIconWidth
-        }
-        Image {
-            sourceSize.width: root.layoutIconWidth
-            sourceSize.height: root.layoutIconWidth
-            source: "qrc:/icons/left-sidebar-list-icon-youtube.svg"
-            Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: root.layoutIconWidth
-            Layout.preferredHeight: root.layoutIconWidth
+        Repeater {
+            model: [
+                "qrc:/icons/left-sidebar-list-icon-facebook.svg",
+                "qrc:/icons/left-sidebar-list-icon-airbnb.svg",
+                "qrc:/icons/left-sidebar-list-icon-dropbox.svg",
+                "qrc:/icons/left-sidebar-list-icon-youtube.svg"
+            ]
+
+            delegate: LeftSidebarButton {
+                sourceSize.width: root.layoutIconWidth
+                sourceSize.height: root.layoutIconWidth
+                source: modelData
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: root.layoutIconWidth
+                Layout.preferredHeight: root.layoutIconWidth
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ ComboBox {
 
 
         background: Rectangle {
-            color: control.highlightedIndex === model.index ? "#444444" : "transparent" // Set the highlight color to gray
+            color: control.highlightedIndex === model.index ? "#4563ad" : "transparent" // Set the highlight color to gray
         }
     }
 
@@ -60,10 +60,8 @@ ComboBox {
     background: Rectangle {
         implicitWidth: 120
         implicitHeight: 40
-        color: "#ffffff"
         opacity: 0.5
-        border.color: control.pressed ? "#ffffff" : "transparent"
-        border.width: control.visualFocus ? 2 : 1
+        color: "#344a81"
         radius: 2
     }
 
@@ -83,8 +81,8 @@ ComboBox {
         }
 
         background: Rectangle {
-            border.color: "#ffffff"
-            color: "#dddddd"
+            border.color: "#344a81"
+            color: "#344a81"
             radius: 2
         }
     }

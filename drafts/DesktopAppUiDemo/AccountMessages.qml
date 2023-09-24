@@ -5,8 +5,10 @@ Item {
 
     property alias source: icon.source
     property alias sourceSize: icon.sourceSize
+    property bool hovered: mouseArea.containsMouse
 
     implicitWidth: icon.implicitWidth + numMessagesContainer.implicitWidth
+    implicitHeight: Math.max(icon.implicitHeight, numMessagesContainer.implicitHeight)
 
     SequentialAnimation on scale {
         id: messagesAnimation
@@ -27,9 +29,24 @@ Item {
 
     Timer {
         interval: 5000
-        running: true
+        running: !hovered
         repeat: true
         onTriggered: messagesAnimation.running = true
+    }
+
+    PropertyAnimation on scale {
+        id: mouseEnterAnimation
+        from: 1.0
+        to: 1.25
+        running: false
+        loops: 1
+    }
+    PropertyAnimation on scale {
+        id: mouseOutAnimation
+        from: 1.25
+        to: 1.0
+        running: false
+        loops: 1
     }
 
 
@@ -54,6 +71,23 @@ Item {
             color: "#ffffff"
             font.pixelSize: 8
             anchors.centerIn: parent
+        }
+    }
+
+    MouseArea {
+        id: mouseArea
+        hoverEnabled: true
+        anchors.fill: root
+    }
+
+    onHoveredChanged: {
+        messagesAnimation.running = false
+        if (hovered) {
+            mouseEnterAnimation.running = true
+            mouseOutAnimation.running = false
+        } else {
+            mouseEnterAnimation.running = false
+            mouseOutAnimation.running = true
         }
     }
 }

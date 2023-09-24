@@ -7,8 +7,8 @@ Item {
     signal filterIndexChanged(int index)
     Rectangle {
         id: mainBackground
-        color: "#ffffff"
         opacity: 0.5
+        color: "#344a81"
         anchors.fill: parent
     }
 

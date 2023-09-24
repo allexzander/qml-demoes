@@ -10,9 +10,16 @@ AbstractButton {
     implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
     implicitHeight: 30
 
+
+    scale: hovered ? 1.25 : 1.0
+
     font.pixelSize: 10
 
     property color color: "#ffffff"
+
+    Behavior on scale {
+        PropertyAnimation{}
+    }
 
     contentItem: Item {
         anchors.fill: parent
@@ -49,7 +56,6 @@ AbstractButton {
         color: "#5ca946"
         radius: 5
         anchors.fill: parent
-        opacity: hovered ? 1.0 : 0.5
     }
 }
 
