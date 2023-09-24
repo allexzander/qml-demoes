@@ -19,5 +19,6 @@
         <file>icons/left-sidebar-list-icon-airbnb.svg</file>
         <file>icons/left-sidebar-list-icon-dropbox.svg</file>
         <file>icons/left-sidebar-list-icon-youtube.svg</file>
+        <file>icons/icon-search-input.svg</file>
     </qresource>
 </RCC>
