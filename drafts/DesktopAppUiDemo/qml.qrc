@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>icons/salesforce-logo.svg</file>
         <file>TilesView.qml</file>
         <file>MainControlsContainer.qml</file>
         <file>FiltersControl.qml</file>
@@ -28,5 +27,13 @@
         <file>icons/icon-envelope.svg</file>
         <file>AccountMessages.qml</file>
         <file>SearchInput.qml</file>
+        <file>icons/grid-icons/freshbooks-logo.svg</file>
+        <file>icons/grid-icons/salesforce-logo.svg</file>
+        <file>icons/grid-icons/zoho-logo.svg</file>
+        <file>icons/grid-icons/highrise-logo.png</file>
+        <file>icons/grid-icons/relateiq-logo.svg</file>
+        <file>icons/grid-icons/teamgate-logo.svg</file>
+        <file>icons/grid-icons/invoicesherpa-logo.png</file>
+        <file>icons/grid-icons/xero-logo.svg</file>
     </qresource>
 </RCC>
