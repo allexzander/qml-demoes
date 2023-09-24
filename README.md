@@ -1,2 +1,2 @@
 # qml-demoes
-Just some QML demoes
+Just some QML demos
