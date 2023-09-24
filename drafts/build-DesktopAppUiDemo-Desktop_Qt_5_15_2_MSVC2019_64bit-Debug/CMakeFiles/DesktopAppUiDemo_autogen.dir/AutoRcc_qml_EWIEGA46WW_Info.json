@@ -7,6 +7,8 @@
 	"INCLUDE_DIR" : "D:/work/qml-demos/drafts/build-DesktopAppUiDemo-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/DesktopAppUiDemo_autogen/include",
 	"INPUTS" : 
 	[
+		"D:/work/qml-demos/drafts/DesktopAppUiDemo/AccountMessages.qml",
+		"D:/work/qml-demos/drafts/DesktopAppUiDemo/SearchInput.qml",
 		"D:/work/qml-demos/drafts/DesktopAppUiDemo/LeftSidebar.qml",
 		"D:/work/qml-demos/drafts/DesktopAppUiDemo/TopBar.qml",
 		"D:/work/qml-demos/drafts/DesktopAppUiDemo/TilesView.qml",

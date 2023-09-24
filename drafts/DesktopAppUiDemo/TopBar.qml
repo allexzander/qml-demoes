@@ -10,76 +10,22 @@ Item {
         anchors.fill: parent
     }
 
-    TextField {
+    SearchInput {
         id: searchField
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         width: activeFocus ? 150 : 50
-        Behavior on width {
-            PropertyAnimation{}
-        }
-        rightPadding: 10
-        leftPadding: 32
-
-        background: Rectangle {
-            color: "#ffffff"
-            border.width: 0
-            border.color: "transparent"
-        }
-
-        Image {
-            id: searchLabel
-            source: "qrc:/icons/icon-search-input.svg"
-            sourceSize.width: 16
-            sourceSize.height: 16
-            anchors.left: parent.left
-            anchors.leftMargin: 10
-            anchors.verticalCenter: parent.verticalCenter
-        }
-        Rectangle {
-            id: rightBorder
-            anchors.left: parent.right
-            width: 1
-            height: parent.height
-            color: "#dddddd"
-        }
     }
 
-    Item {
+    AccountMessages {
         id: accountMessages
+        source: "qrc:/icons/icon-envelope.svg"
+        sourceSize.width: root.height * 0.5
+        sourceSize.height: root.height * 0.5
         anchors.right: accountNotifications.left
         anchors.rightMargin: 30
         anchors.verticalCenter: parent.verticalCenter
-
-        implicitWidth: icon.implicitWidth + numMessagesContainer.implicitWidth
-
-        Image {
-            id: icon
-            source: "qrc:/icons/icon-envelope.svg"
-            sourceSize.width: root.height * 0.5
-            sourceSize.height: root.height * 0.5
-            anchors.centerIn: parent
-
-        }
-        Rectangle {
-            id: numMessagesContainer
-            color: "#2293f4"
-            readonly property int numMessagesLeftMargin: -3
-            width: 14
-            height: 14
-            radius: width / 2
-            anchors.left: icon.right
-            anchors.leftMargin: numMessagesLeftMargin
-            anchors.verticalCenter: icon.verticalCenter
-            Text {
-                id: numMessages
-                text: "7"
-                color: "#ffffff"
-                font.pixelSize: 8
-                anchors.centerIn: parent
-            }
-        }
     }
 
     Image {

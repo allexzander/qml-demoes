@@ -26,5 +26,7 @@
         <file>account-avatars/account-icon-woman.svg</file>
         <file>icons/icon-bell.svg</file>
         <file>icons/icon-envelope.svg</file>
+        <file>AccountMessages.qml</file>
+        <file>SearchInput.qml</file>
     </qresource>
 </RCC>
