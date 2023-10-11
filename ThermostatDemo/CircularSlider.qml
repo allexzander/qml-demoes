@@ -90,7 +90,7 @@ Rectangle {
 
                 Connections {
                     target: track
-                    onPaintFinished: {
+                    function onPaintFinished() {
                         console.log("Canvas paint finished!!!!!!!!")
                         let angleAbsolute = track.startAngle + (root.value / track.valueFactor)
                         let initialAngle = utils.convertToAtan2Range(angleAbsolute)

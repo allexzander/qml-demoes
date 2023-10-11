@@ -10,7 +10,7 @@ AbstractButton {
 
     contentItem: Item {
         anchors.fill: parent
-        implicitWidth: childrenRect.width
+        implicitWidth: contentItemContainer.width
         implicitHeight: contentItemContainer.implicitHeight
         Item {
             id: contentItemContainer
